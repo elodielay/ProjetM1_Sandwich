@@ -1,0 +1,13 @@
+<div class="first-circle">
+    <h1 id="title">Liste des sandwich</h1>
+
+    <div class="liste-sandwich">
+        <div (click)="recupSandwich(index)" [appSelection]="index === selectionSandwich" *ngFor="let sandwich of sandwiches; let index = index" class="responsive">
+            <img [src]="sandwich.img" width="600" height="600">
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+
+</div>

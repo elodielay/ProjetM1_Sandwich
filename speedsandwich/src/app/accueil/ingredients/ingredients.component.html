@@ -1,0 +1,18 @@
+<div class="first-circle">
+    <h1 id="title">Liste des ingredients</h1>
+
+    <div class="sandwich">
+        <img class="img-fluid" style="max-height: 150px;" [src]="sandwich.img" alt="#" />
+
+        <ul>
+            <li *ngFor="let ing of sandwich.ingredients;">
+                {{ing.nomIngredient}}
+            </li>
+        </ul>
+
+        <button class="bouton-acheter">Ajouter au panier</button>
+    </div>
+
+
+
+</div>

@@ -1,0 +1,89 @@
+[{
+        "id": 1,
+        "nomSandwich": "Burger au steak haché",
+        "img": "../../assets/burger_boeuf.jpg",
+        "prixSandwich": 6
+
+    },
+
+    {
+        "id": 2,
+        "nomSandwich": "Burger au poisson pané",
+        "img": "../../assets/burger_poisson.jpg",
+        "prixSandwich": 6
+
+    },
+
+    {
+        "id": 3,
+        "nomSandwich": "Burger au poulet frit",
+        "img": "../../assets/burger_poulet.jpg",
+        "prixSandwich": 6
+
+    },
+
+    {
+        "id": 4,
+        "nomSandwich": "Club sandwich poulet",
+        "img": "../../assets/club_sandwich.jpg",
+        "prixSandwich": 3
+
+    },
+
+    {
+        "id": 5,
+        "nomSandwich": "Sandwich dinde",
+        "img": "../../assets/sandwich_dinde.jpg",
+        "prixSandwich": 3
+
+    },
+
+    {
+        "id": 6,
+        "nomSandwich": "Sandwich poulet",
+        "img": ".../../assets/sandwich.jpg",
+        "prixSandwich": 3
+
+    },
+
+    {
+        "id": 7,
+        "nomSandwich": "Panini 4 fromages",
+        "img": "../../assets/panini.jpeg",
+        "prixSandwich": 5
+
+    },
+
+    {
+        "id": 8,
+        "nomSandwich": "Tacos poulet",
+        "img": "../../assets/tacos.jpg",
+        "prixSandwich": 5
+
+    },
+
+    {
+        "id": 9,
+        "nomSandwich": "Tacos boeuf",
+        "img": "../../assets/tacos_boeuf.jpg",
+        "prixSandwich": 5
+
+    },
+
+    {
+        "id": 10,
+        "nomSandwich": "Tacos vege",
+        "img": "../../assets/tacos_vege.jpg",
+        "prixSandwich": 5
+
+    },
+
+    {
+        "id": 11,
+        "nomSandwich": "Tacos oeuf",
+        "img": "../../assets/tacos_oeuf.jpg",
+        "prixSandwich": 5
+
+    }
+
+]

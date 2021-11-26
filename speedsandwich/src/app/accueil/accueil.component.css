@@ -1,0 +1,12 @@
+.center {
+    text-align: center;
+    padding: 10px;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-weight: bold;
+    font-family: Helvetica;
+}
+
+.row {
+    display: flex;
+}
