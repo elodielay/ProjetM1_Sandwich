@@ -3,12 +3,10 @@
     border-radius: 10px;
     display: block;
     width: 40%;
-    /* background: linear-gradient(180deg, #d9d9d9 50px, white 10%); */
-    font-family: Helvetica;
     position: absolute;
     left: 30px;
     background-color: #f6f6f6;
-    padding-bottom: 10px;
+    overflow: hidden;
 }
 
 #title {
