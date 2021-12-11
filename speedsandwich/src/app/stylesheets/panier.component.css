@@ -1,0 +1,141 @@
+#liste-produit {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 40%;
+    margin: 2.5%;
+    background-color: #f6f6f6;
+    overflow: hidden;
+    left: 0;
+    display: inline-block;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Style the list items */
+
+ul li {
+    border-top: 1px solid #ddd;
+    margin-bottom: -5px;
+    /* aligne les images */
+    background-color: white;
+    padding: 0;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Style the close button */
+
+.quantite {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 100%;
+    padding: 0;
+    width: 25%;
+    transform: translate(0%, -50%);
+    border: none;
+    background-color: white;
+    text-align: center;
+}
+
+.ajout,
+.retrait {
+    cursor: pointer;
+    width: 25%;
+    height: 100%;
+    border: none;
+    background: white;
+}
+
+.ajout:hover,
+.retrait:hover {
+    background: #f6f6f6;
+}
+
+.ajout {
+    position: absolute;
+    right: 0;
+}
+
+img {
+    height: 150px;
+    height: 150px;
+    padding: 0;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.product-info {
+    position: absolute;
+    left: 35%;
+    transform: translate(0%, -50%);
+    top: 35%;
+}
+
+.box-name {
+    padding: 0 5%;
+}
+
+#droite {
+    right: 0;
+    width: 40%;
+    position: fixed;
+    margin: 2.5%;
+    display: inline-block;
+}
+
+#formulaire {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #f6f6f6;
+    overflow: hidden;
+}
+
+form {
+    background-color: white;
+}
+
+label {
+    display: inline-block;
+    width: 17.5%;
+    margin-left: 10%;
+}
+
+input {
+    width: 50%;
+    /* Full width */
+    padding: 12px;
+    /* Some padding */
+    border: 1px solid black;
+    border-radius: 4px;
+    /* Rounded borders */
+    box-sizing: border-box;
+    /* Make sure that padding and width stays in place */
+    margin-top: 16px;
+    /* Add a top margin */
+    margin-bottom: 10px;
+    /* Bottom margin */
+}
+
+#commander {
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin: 5% 0;
+    border: 3px solid black;
+    background-color: white;
+    padding: 2.5% 10%;
+    border-radius: 16px;
+    font-size: 100%;
+}

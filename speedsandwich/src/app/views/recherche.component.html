@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+<div *ngIf="hiddenSearch" class="search-container ">
+    <form (submit)="onSearch()">
+        <input input="text" placeholder="Cherchez un ingredient..." [(ngModel)]="ing " name="search" id="search" (submit)="onSearch()">
+        <button type="submit" (submit)="onSearch()" (click)="onSearch() "><i class="fa fa-search "></i></button>
+    </form>
+</div>
+
+<div *ngIf="hiddenData" class="first-circle">
+    <h2 id="title">Résultat de la recherche</h2>
+    <div *ngFor="let sandwich of sandwiches" class="sandwich">
+        <img [src]="sandwich.image" width="130" height="130">
+        <div class="nom-prix">
+            <p class="nom-sandwich">{{sandwich.name}}</p>
+            <p class="prix-sandwich">{{sandwich.getPrix()}} €</p>
+        </div>
+
+        <button id="data" routerLink="/panier" routerLinkActive="active" class="bouton-sandwich" (click)="onAjoute(sandwich.id-1)">Ajouter au panier</button>
+
+    </div>
+</div>

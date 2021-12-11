@@ -1,0 +1,35 @@
+<body>
+    <div>
+        <app-header></app-header>
+        <div id="liste-produit">
+            <h2 class="box-name">Total des produits</h2>
+            <ul>
+                <li *ngFor="let sandwich of sandwichs; let i = index">
+                    <img src="{{ sandwich.image }}" alt="Image {{ sandwich.name }}">
+                    <p class="product-info">{{ sandwich.name }}<br>{{ sandwich.getPrix() }} €</p>
+                    <div class="quantite">
+                        <button class="retrait">-</button>
+                        <!--{{ ing.getCount() }}-->5
+                        <button class="ajout">+</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="droite">
+            <div id="formulaire">
+                <h2 class="box-name">Formulaire de livraison</h2>
+                <form>
+                    <label for="nom">Nom:</label>
+                    <input type="text" id="nom" name="nom"><br>
+                    <label for="prenom">Prenom:</label>
+                    <input type="text" id="prenom" name="prenom"><br>
+                    <label for="adresse">Adresse:</label>
+                    <input type="text" id="adresse" name="adresse"><br>
+                    <label for="telephone">Téléphone:</label>
+                    <input type="tel" id="telephone" name="telephone"><br>
+                </form>
+            </div>
+            <button id="commander" (click)="onCommande()">Commander</button>
+        </div>
+    </div>
+</body>

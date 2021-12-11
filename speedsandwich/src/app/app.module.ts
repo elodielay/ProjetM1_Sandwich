@@ -3,27 +3,46 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AccueilComponent } from './accueil/accueil.component';
-import { SuggestionsComponent } from './accueil/suggestions/suggestions.component';
-import { ListeSandwichComponent } from './accueil/liste-sandwich/liste-sandwich.component';
-import { IngredientsComponent } from './accueil/ingredients/ingredients.component';
-import { SelectionDirective } from './shared/directive/selection.directive';
+import { AccueilComponent } from './controllers/accueil.component';
+import { PanierComponent } from './controllers/panier.component';
+import { AccueilModel } from './models/accueil.model';
+import { PanierModel } from './models/panier.model';
+import { IngredientsComponent } from './controllers/ingredients.component';
+import { ListeSandwichComponent } from './controllers/liste-sandwich.component';
+import { SuggestionsComponent } from './controllers/suggestions.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import 'reflect-metadata';
+import { FormsModule } from '@angular/forms';
+import { RechercheComponent } from './controllers/recherche.component';
+import { HeaderComponent } from './controllers/header.component';
+import { RechercheModel } from './models/recherche.model';
+import { PageNonExistanteComponent } from './controllers/page-non-existante.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccueilComponent,
-    SuggestionsComponent,
-    ListeSandwichComponent,
+    PanierComponent,
     IngredientsComponent,
-    SelectionDirective,
-
+    ListeSandwichComponent,
+    SuggestionsComponent,
+    RechercheComponent,
+    HeaderComponent,
+    PageNonExistanteComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    AccueilModel,
+    PanierModel,
+    RechercheModel
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

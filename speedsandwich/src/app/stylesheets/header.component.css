@@ -1,0 +1,33 @@
+.topnav {
+    overflow: hidden;
+    background-color: rgb(26, 24, 24);
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 30px
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+i {
+    font-size: 30px;
+}
+
+p {
+    color: white;
+    margin-top: 15px;
+    font-family: 'Alfa Slab One';
+    text-align: end;
+    margin-right: 5px;
+    font-size: 30px;
+    line-height: 30px;
+}

@@ -1,0 +1,15 @@
+app-header {
+    margin-bottom: 120px;
+}
+
+.center {
+    text-align: center;
+    padding: 10px;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-weight: bold;
+}
+
+.row {
+    display: flex;
+}

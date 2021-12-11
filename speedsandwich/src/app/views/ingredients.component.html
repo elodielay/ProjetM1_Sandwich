@@ -1,0 +1,15 @@
+<div class="first-circle">
+    <h2 id="title">Liste des ingredients</h2>
+    <div *ngIf="sandwich" class="sandwich">
+        <img class="img-fluid" style="max-height: 150px;" [src]="sandwich.image" alt="#" />
+        <ul>
+            <li *ngFor="let ing of sandwich.ingredients;">
+                {{ ing.getLibelle() }}
+            </li>
+        </ul>
+        <button routerLink="/panier" routerLinkActive="active" class="bouton-acheter" (click)="onAjoute()">Ajouter au panier</button>
+    </div>
+</div>
+
+
+<router-outlet></router-outlet>

@@ -1,0 +1,11 @@
+<div class="first-circle">
+    <h2 id="title">Nos suggestions du moment</h2>
+    <div (click)="onSelect(i)" *ngFor="let sandwich of sandwiches; let i = index" class="sandwich">
+        <img [src]="sandwich.image" width="130" height="130">
+        <div class="nom-prix">
+            <p class="nom-sandwich">{{sandwich.name}}</p>
+            <p class="prix-sandwich">{{sandwich.getPrix()}} €</p>
+        </div>
+        <button class="bouton-sandwich">Details</button>
+    </div>
+</div>
