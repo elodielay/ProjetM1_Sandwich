@@ -66,12 +66,28 @@ export class AccueilModel
 
 		return this.sandwiches;
 	}
+
+	private createArrayRandom(array : number[]) 
+	{
+		var tmp, current, top = array.length;
+		if(top) while(--top) {
+		  current = Math.floor(Math.random() * (top + 1));
+		  tmp = array[current];
+		  array[current] = array[top];
+		  array[top] = tmp;
+		}
+		return array;
+	}
+
 	public getSuggestions():Sandwich[]
 	{
-		this.suggestions.splice(0, this.suggestions.length);
-		this.suggestions.push(this.sandwiches[0]);
-		this.suggestions.push(this.sandwiches[1]);
-		this.suggestions.push(this.sandwiches[2]);
+	for (var loc=[],i=0;i<4;++i) loc[i]=i;
+
+	let arrayNumber = this.createArrayRandom(loc);
+	arrayNumber.forEach(element => {
+		if(this.suggestions.length<3)
+		this.suggestions.push(this.sandwiches[element])
+	});
 		return this.suggestions;
 	}
 
