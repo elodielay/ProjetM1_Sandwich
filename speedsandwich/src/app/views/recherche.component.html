@@ -1,5 +1,3 @@
-<app-header></app-header>
-
 <div *ngIf="hiddenSearch" class="search-container ">
     <form (submit)="onSearch()">
         <input input="text" placeholder="Cherchez un ingredient..." [(ngModel)]="ing " name="search" id="search" (submit)="onSearch()">

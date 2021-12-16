@@ -1,6 +1,5 @@
 import { Component} from '@angular/core';
 import { AccueilModel } from '../models/accueil.model';
-import { HeaderComponent } from './header.component';
 
 @Component({
 	selector: 'app-accueil',

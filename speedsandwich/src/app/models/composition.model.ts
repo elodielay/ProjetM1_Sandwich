@@ -34,7 +34,8 @@ export class CompositionModel
 {
 	comp_subject = new Subject<Menu>();
 
-	private menu:Menu = new Menu();
+	private menu!:Menu;
+	private created:number;
 
 	private clg_pains:Pain[] = [
 		new PainBaguette(),
@@ -90,6 +91,23 @@ export class CompositionModel
 		return this.clg_boissons;
 	}
 
+	setSandwich(sandwich:Sandwich):void
+	{
+		this.menu.setSandwich(sandwich);
+	}
+
+	setSauce(index:number):void
+	{
+		const sauce = this.clg_sauces[index];
+		this.menu.setSauce(sauce);
+		this.emitMenu();
+	}
+	setAccompaniement(index:number):void
+	{
+		const accompaniement = this.clg_supplements[index];
+		this.menu.setAccompaniement(accompaniement);
+		this.emitMenu();
+	}
 	setDrink(index:number):void
 	{
 		const drink = this.clg_boissons[index];
@@ -97,9 +115,22 @@ export class CompositionModel
 		this.emitMenu();
 	}
 
+	constructor()
+	{
+		this.created = 0;
+		this.initDefault();
+	}
+
+	initDefault():void
+	{
+		this.created++;
+		const name = ("Mon menu "+this.created);
+		this.menu = new Menu(name);
+		this.emitMenu();
+	}
+
 	emitMenu():void
 	{
-		console.log(this.menu);
 		this.comp_subject.next(this.menu.copy());
 	}
 }

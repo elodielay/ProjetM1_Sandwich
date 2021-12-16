@@ -54,21 +54,20 @@
         </ul>
       </div>
     </div>
-  
+  -->
     <div class="catalogueSauce">
       <h3>NOS SAUCES</h3>
       <div class="choix">
         <ul>
-          <li *ngFor="let ing of catalogueSauce; let index = index">
+          <li *ngFor="let sauce of clg_sauces; let i=index">
             <div
-              (click)="addMultiple(ing)"
-              class="{{ ing.toString() }}"
+              (click)="onSelectSauce(i)"
               id="catalogue"
             >
-            {{ ing.getLibelle() }}
+            {{ sauce.getLibelle() }}
   
             <div class="image">
-              <img src="ing.src" width="100" height="100">
+              <img src="sauce.src" width="100" height="100">
             </div>
   
             </div>
@@ -76,15 +75,14 @@
         </ul>
       </div>
     </div>
-  
+
     <div class="catalogueSupp">
       <h3>NOS SUPPLEMENTS</h3>
       <div class="choix">
         <ul>
-          <li *ngFor="let ing of catalogueSupp; let index = index">
+          <li *ngFor="let ing of clg_supplements; let i=index">
             <div
-              (click)="addMultiple(ing)"
-              class="{{ ing.toString() }}"
+              (click)="onSelectAccompaniement(i)"
               id="catalogue"
             >
               {{ ing.getLibelle() }}
@@ -93,52 +91,54 @@
         </ul>
       </div>
     </div>
-  -->
+
     <div class="catalogueBoisson">
       <h3>NOS BOISSONS</h3>
       <div class="choix">
         <ul>
-          <li *ngFor="let ing of clg_boissons; let i = index">
+          <li *ngFor="let drink of clg_boissons; let i=index">
             <div
               (click)="onSelectDrink(i)"
-              class="{{ ing.toString() }}"
               id="catalogue"
             >
-              {{ ing.getLibelle() }}
+              {{ drink.getLibelle() }}
             </div>
           </li>
         </ul>
       </div>
     </div>
-  <!--
-    <button (click)="addToPanier()">Ajouter sandwich</button>
-    <button>
-      Voir panier (redirection vers la page panier pas encore faite)
-    </button>
   
+    <div>
+      <button
+        routerLink="/panier"
+        routerLinkActive="active"
+        *ngIf="menu.complete()" (click)="onAddToPanier()"
+      >
+        Ajouter sandwich
+      </button>
+      <button routerLink="" routerLinkActive="active" (click)="onQuitCompo()">Annuler la création</button>
+      <p *ngIf="!menu.complete()">Composez votre menu pour l'ajouter au panier</p>
+    </div>
+
     <div class="recap">
         <div>
           <div>
             <h2>Vos ingrédients</h2>
-            {{ this.pain!.getLibelle() }} |
-            {{ this.toString() }}
           </div>
       
           <h2>VOS SANDWICHS</h2>
           <div id="sandwich">
-            <a *ngFor="let ing of panier!.getSandwichs(); let index = index">
-              <h4>Sandwich numero {{ index }} :</h4>
+            <a>
+              <h4>Sandwich numero :</h4>
               <div>
-                {{ ing.toString() }}
                   <div>
-                    <button (click)="removePanier(ing)">Retirer du panier</button>
+                    <button>Retirer du panier</button>
                   </div>
               </div>
             </a>
           </div>
         </div>
       </div>
-    -->
   </div>
   
   
