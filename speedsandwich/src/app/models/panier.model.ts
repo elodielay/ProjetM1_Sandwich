@@ -29,7 +29,7 @@ export class PanierModel
 		return prix_total;
 	}
 
-	ajouter(sandwich:Sandwich):void
+	addItem(sandwich:Sandwich):void
 	{
 		let found = 0;
 		if (this.articles) {
@@ -46,14 +46,13 @@ export class PanierModel
 		}
 		this.emitSandwichs();
 	}
-	
-	add (index:number):void
+	addByIndex(index:number):void
 	{
 		const item = this.articles[index];
 		item[1]++;
 		this.emitSandwichs();
 	}
-	remove(index:number):void
+	removeByIndex(index:number):void
 	{
 		const item = this.articles[index];
 		if (item[1]>1) {

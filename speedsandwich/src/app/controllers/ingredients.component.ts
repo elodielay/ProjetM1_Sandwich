@@ -23,7 +23,7 @@ export class IngredientsComponent {
 
   onAjoute():void
   {
-    this.panier_model.ajouter(this.sandwich);
+    this.panier_model.addItem(this.sandwich);
     this.accueil_model.resetSelected();
   }
 }

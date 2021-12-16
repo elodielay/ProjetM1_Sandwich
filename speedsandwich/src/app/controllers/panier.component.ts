@@ -34,11 +34,11 @@ export class PanierComponent implements OnInit {
 
   onAdd(index:number):void
   {
-    this.panier_model.add(index);
+    this.panier_model.addByIndex(index);
   }
   onRemove(index:number):void
   {
-    this.panier_model.remove(index);
+    this.panier_model.removeByIndex(index);
   }
 
   onCommande():void
