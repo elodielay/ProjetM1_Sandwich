@@ -1,5 +1,6 @@
 import { Observable, Subject } from 'rxjs';
 import { Sandwich } from './sandwich/sandwich';
+import { Menu } from './menu/menu';
 
 import { Pain } from './ingredients/pains/pain';
 import { PainBaguette } from './ingredients/pains/pain-baguette';
@@ -31,9 +32,10 @@ import { SodaOrange } from './ingredients/boissons/soda-orange';
 
 export class CompositionModel
 {
-	comp_subject = new Subject<Sandwich>();
+	comp_subject = new Subject<Menu>();
 
-	private sandwich:Sandwich = new Sandwich("", "");
+	private menu!:Menu;
+	private created:number;
 
 	private clg_pains:Pain[] = [
 		new PainBaguette(),
@@ -89,56 +91,46 @@ export class CompositionModel
 		return this.clg_boissons;
 	}
 
-	addViande(index:number):void
+	setSandwich(sandwich:Sandwich):void
 	{
-		const ing:Viande = this.clg_viandes[index];
-		ing.incCount();
-		if (ing.getCount()===1) {
-			this.sandwich.addIngredient(ing);
-		}
-		this.emitSandwich();
-	}
-	addFromage(index:number):void
-	{
-		const ing:Fromage = this.clg_fromages[index];
-		ing.incCount();
-		if (ing.getCount()===1) {
-			this.sandwich.addIngredient(ing);
-		}
-		this.emitSandwich();
+		this.menu.setSandwich(sandwich);
 	}
 
-	removeIngredient(index:number):void
+	setSauce(index:number):void
 	{
-		this.sandwich.removeIngredientByIndex(index);
-		this.emitSandwich();
+		const sauce = this.clg_sauces[index];
+		this.menu.setSauce(sauce);
+		this.emitMenu();
 	}
-	removeViande(index:number):void
+	setAccompaniement(index:number):void
 	{
-		const ing:Viande = this.clg_viandes[index];
-		ing.decCount();
-		if (ing.getCount()<1) {
-			this.sandwich.removeIngredient(ing);
-		}
-		this.emitSandwich();
+		const accompaniement = this.clg_supplements[index];
+		this.menu.setAccompaniement(accompaniement);
+		this.emitMenu();
 	}
-	removeFromage(index:number):void
+	setDrink(index:number):void
 	{
-		const ing:Fromage = this.clg_fromages[index];
-		ing.decCount();
-		if (ing.getCount()<1) {
-			this.sandwich.removeIngredient(ing);
-		}
-		this.emitSandwich();
+		const drink = this.clg_boissons[index];
+		this.menu.setDrink(drink);
+		this.emitMenu();
 	}
 
-	changePain(pain:Pain):void
+	constructor()
 	{
-		this.sandwich.setPain(pain);
+		this.created = 0;
+		this.initDefault();
 	}
 
-	emitSandwich():void
+	initDefault():void
 	{
-		this.comp_subject.next(this.sandwich.copy());
+		this.created++;
+		const name = ("Mon menu "+this.created);
+		this.menu = new Menu(name);
+		this.emitMenu();
+	}
+
+	emitMenu():void
+	{
+		this.comp_subject.next(this.menu.copy());
 	}
 }

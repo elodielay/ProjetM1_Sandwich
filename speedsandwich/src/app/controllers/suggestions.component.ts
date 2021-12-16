@@ -25,7 +25,7 @@ export class SuggestionsComponent {
 
   onAjoute(index:number):void
   {
-    this.panier_model.ajouter(this.sandwiches[index]);
+    this.panier_model.addItem(this.sandwiches[index]);
   }
   
   onSelect(index:number):void

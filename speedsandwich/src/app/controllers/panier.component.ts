@@ -32,13 +32,18 @@ export class PanierComponent implements OnInit {
     this.panier_model.emitSandwichs();
   }
 
+  getPrixTotal():number
+  {
+    return this.panier_model.getPrixTotal();
+  }
+
   onAdd(index:number):void
   {
-    this.panier_model.add(index);
+    this.panier_model.addByIndex(index);
   }
   onRemove(index:number):void
   {
-    this.panier_model.remove(index);
+    this.panier_model.removeByIndex(index);
   }
 
   onCommande():void

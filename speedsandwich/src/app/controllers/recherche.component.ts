@@ -51,7 +51,7 @@ export class RechercheComponent implements OnInit {
   onAjoute(index:number):void
   {
     this.rechercheModel.setSelected(index);
-    this.panier_model.ajouter(this.sandwich);
+    this.panier_model.addItem(this.sandwich);
   
   }
 

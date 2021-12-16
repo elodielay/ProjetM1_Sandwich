@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Sandwich } from '../models/sandwich/sandwich';
-import { CompositionModel } from '../models/composition.model';
+import { Component} from '@angular/core';
+import { HeaderComponent } from './header.component';
 
+import { CompositionModel } from '../models/composition.model';
+import { PanierModel } from '../models/panier.model';
+
+import { Menu } from '../models/menu/menu';
 import { Pain } from '../models/ingredients/pains/pain';
 import { Viande } from '../models/ingredients/viandes/viande';
 import { Fromage } from '../models/ingredients/fromages/fromage';
@@ -14,9 +17,9 @@ import { Boisson } from '../models/ingredients/boissons/boisson';
   templateUrl: '../views/composition.component.html',
   styleUrls: ['../stylesheets/composition.component.css']
 })
-export class CompositionComponent implements OnInit {
+export class CompositionComponent {
 
-  sandwich:Sandwich;
+  menu!:Menu;
   clg_pains:Pain[];
   clg_viandes:Viande[];
   clg_fromages:Fromage[];
@@ -24,52 +27,43 @@ export class CompositionComponent implements OnInit {
   clg_supplements:Supplements[];
   clg_boissons:Boisson[];
 
-  constructor(private comp_model:CompositionModel)
+  constructor(private comp_model:CompositionModel, private panier_model:PanierModel)
   {
-    this.sandwich = new Sandwich("", "");
     this.clg_pains = this.comp_model.getClgPains();
     this.clg_viandes = this.comp_model.getClgViandes();
     this.clg_fromages = this.comp_model.getClgFromages();
     this.clg_sauces = this.comp_model.getClgSauces();
     this.clg_supplements = this.comp_model.getClgSupplements();
     this.clg_boissons = this.comp_model.getClgBoissons();
-  }
-
-  onAddViande(index:number):void
-  {
-    this.comp_model.addViande(index);
-  }
-  onAddFromage(index:number):void
-  {
-    this.comp_model.addFromage(index);
-  }
-
-  onRemoveIngredient(index:number):void
-  {
-    this.comp_model.removeIngredient(index);
-  }
-  onRemoveViande(index:number):void
-  {
-    this.comp_model.removeViande(index);
-  }
-  onRemoveFromage(index:number):void
-  {
-    this.comp_model.removeFromage(index);
-  }
-
-  onChangePain(pain:Pain):void
-  {
-    this.comp_model.changePain(pain);
-  }
-
-  ngOnInit():void
-  {
     this.comp_model.comp_subject.subscribe(
-      (sandwich:Sandwich) => {
-        this.sandwich = sandwich;
+      (menu:Menu) => {
+        this.menu = menu;
       }
     );
-    this.comp_model.emitSandwich();
+    this.comp_model.emitMenu();
+  }
+
+  onQuitCompo():void
+  {
+    this.comp_model.initDefault();
+  }
+  onAddToPanier():void
+  {
+    this.panier_model.addItem(this.menu.copy());
+    this.comp_model.initDefault();
+  }
+
+  onSelectSauce(index:number):void
+  {
+    this.comp_model.setSauce(index);
+  }
+  onSelectAccompaniement(index:number):void
+  {
+    this.comp_model.setAccompaniement(index);
+  }
+  onSelectDrink(index:number):void
+  {
+    this.comp_model.setDrink(index);
   }
 
 }
