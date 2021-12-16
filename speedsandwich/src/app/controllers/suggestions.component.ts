@@ -30,6 +30,6 @@ export class SuggestionsComponent {
   
   onSelect(index:number):void
   {
-    //this.accueil_model.setSelected(this.sandwiches[index]);
+    this.accueil_model.setSelectedSuggestion(index);
   }
 }

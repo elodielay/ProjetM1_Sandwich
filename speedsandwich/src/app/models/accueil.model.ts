@@ -67,33 +67,49 @@ export class AccueilModel
 		return this.sandwiches;
 	}
 
-	private createArrayRandom(array : number[]) 
+	private createRandomArray(array:number[]) 
 	{
-		var tmp, current, top = array.length;
-		if(top) while(--top) {
-		  current = Math.floor(Math.random() * (top + 1));
-		  tmp = array[current];
-		  array[current] = array[top];
-		  array[top] = tmp;
+		var tmp, current, top=array.length;
+		if (top) {
+			while(--top) {
+			  current = Math.floor(Math.random() * (top + 1));
+			  tmp = array[current];
+			  array[current] = array[top];
+			  array[top] = tmp;
+			}
 		}
 		return array;
 	}
 
 	public getSuggestions():Sandwich[]
 	{
-	for (var loc=[],i=0;i<4;++i) loc[i]=i;
+		var loc = [];
+		for (var i=0; i<5 ;++i) {
+			loc[i] = i;
+		}
 
-	let arrayNumber = this.createArrayRandom(loc);
-	arrayNumber.forEach(element => {
-		if(this.suggestions.length<3)
-		this.suggestions.push(this.sandwiches[element])
-	});
+		let array_number = this.createRandomArray(loc);
+		array_number.forEach(element => {
+			if(this.suggestions.length<3) {
+				this.suggestions.push(this.sandwiches[element])
+			}
+		});
 		return this.suggestions;
 	}
 
-	public setSelected(index:number):void
+	public resetSelected():void
+	{
+		this.selected = undefined;
+		this.emitSandwich();
+	}
+	public setSelectedSandwich(index:number):void
 	{
 		this.selected = this.sandwiches[index];
+		this.emitSandwich();
+	}
+	public setSelectedSuggestion(index:number):void
+	{
+		this.selected = this.suggestions[index];
 		this.emitSandwich();
 	}
 

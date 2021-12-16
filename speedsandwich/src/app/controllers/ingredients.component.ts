@@ -24,6 +24,6 @@ export class IngredientsComponent {
   onAjoute():void
   {
     this.panier_model.ajouter(this.sandwich);
-    this.accueil_model.setSelected(-1);
+    this.accueil_model.resetSelected();
   }
 }

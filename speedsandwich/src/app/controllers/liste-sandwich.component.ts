@@ -24,6 +24,6 @@ export class ListeSandwichComponent {
 
   onSelect(index:number):void
   {
-    this.accueil_model.setSelected(index);
+    this.accueil_model.setSelectedSandwich(index);
   }
 }

@@ -13,7 +13,7 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 })
 export class PanierComponent implements OnInit {
 
-  sandwichs:Sandwich[] = [];
+  sandwichs?:any[][];
 
   private sub:Subscription;
 
@@ -21,7 +21,7 @@ export class PanierComponent implements OnInit {
   constructor(private panier_model:PanierModel, public dialog: MatDialog)
   {
     this.sub = this.panier_model.panier_subject.subscribe(
-      (sandwichs:Sandwich[]) => {
+      (sandwichs:any[][]) => {
         this.sandwichs = sandwichs;
       }
     );
@@ -30,6 +30,15 @@ export class PanierComponent implements OnInit {
   ngOnInit()
   {
     this.panier_model.emitSandwichs();
+  }
+
+  onAdd(index:number):void
+  {
+    this.panier_model.add(index);
+  }
+  onRemove(index:number):void
+  {
+    this.panier_model.remove(index);
   }
 
   onCommande():void
@@ -46,7 +55,7 @@ export class PanierComponent implements OnInit {
       validation=false;
       alert("Veuillez saisir vos données.")
     }
-    if(this.sandwichs.length==0){
+    if(this.sandwichs!.length==0){
       validation=false;
       alert("Pas de sandwich dans votre panier")
     }
@@ -99,11 +108,6 @@ export class PanierComponent implements OnInit {
         console.log(serchfind)
         return serchfind
     }
-
-  onRetire(index:number):void
-  {
-    this.panier_model.retirer(index);
-  }
 }
 
 @Component({

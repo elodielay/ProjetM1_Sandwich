@@ -4,13 +4,13 @@
         <div id="liste-produit">
             <h2 class="box-name">Total des produits</h2>
             <ul>
-                <li *ngFor="let sandwich of sandwichs; let i = index">
-                    <img src="{{ sandwich.image }}" alt="Image {{ sandwich.name }}">
-                    <p class="product-info">{{ sandwich.name }}<br>{{ sandwich.getPrix() }} €</p>
+                <li *ngFor="let item of sandwichs; let i = index">
+                    <img src="{{ item[0].image }}" alt="Image {{ item[0].name }}">
+                    <p class="product-info">{{ item[0].name }}<br>{{ item[0].getPrix() * item[1] }} €</p>
                     <div class="quantite">
-                        <button class="retrait">-</button>
-                        <!--{{ ing.getCount() }}-->5
-                        <button class="ajout">+</button>
+                        <button class="retrait" (click)="onRemove(i)">-</button>
+                        {{ item[1] }}
+                        <button class="ajout" (click)="onAdd(i)">+</button>
                     </div>
                 </li>
             </ul>
