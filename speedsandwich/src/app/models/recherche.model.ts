@@ -21,7 +21,7 @@ export class RechercheModel
 		for(let i=0; i < this.sandwiches.length; i++){
 			let listeIng: IIngredient[] = this.sandwiches[i].ingredients;
 			for(let y = 0; y < this.sandwiches[i].ingredients?.length; y++){
-				if(ing.toLowerCase() == listeIng[y].getLibelle().toLowerCase()){
+				if(ing.toLowerCase() == listeIng[y].getLibelle().toLowerCase() || listeIng[y].getLibelle().toLowerCase().includes(ing.toLowerCase())){
 					this.sandwichsData?.push(this.sandwiches[i]);
 				}
 			}
