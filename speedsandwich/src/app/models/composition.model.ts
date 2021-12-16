@@ -1,5 +1,6 @@
 import { Observable, Subject } from 'rxjs';
 import { Sandwich } from './sandwich/sandwich';
+import { Menu } from './menu/menu';
 
 import { Pain } from './ingredients/pains/pain';
 import { PainBaguette } from './ingredients/pains/pain-baguette';
@@ -31,9 +32,9 @@ import { SodaOrange } from './ingredients/boissons/soda-orange';
 
 export class CompositionModel
 {
-	comp_subject = new Subject<Sandwich>();
+	comp_subject = new Subject<Menu>();
 
-	private sandwich:Sandwich = new Sandwich("", "");
+	private menu:Menu = new Menu();
 
 	private clg_pains:Pain[] = [
 		new PainBaguette(),
@@ -89,56 +90,16 @@ export class CompositionModel
 		return this.clg_boissons;
 	}
 
-	addViande(index:number):void
+	setDrink(index:number):void
 	{
-		const ing:Viande = this.clg_viandes[index];
-		ing.incCount();
-		if (ing.getCount()===1) {
-			this.sandwich.addIngredient(ing);
-		}
-		this.emitSandwich();
-	}
-	addFromage(index:number):void
-	{
-		const ing:Fromage = this.clg_fromages[index];
-		ing.incCount();
-		if (ing.getCount()===1) {
-			this.sandwich.addIngredient(ing);
-		}
-		this.emitSandwich();
+		const drink = this.clg_boissons[index];
+		this.menu.setDrink(drink);
+		this.emitMenu();
 	}
 
-	removeIngredient(index:number):void
+	emitMenu():void
 	{
-		this.sandwich.removeIngredientByIndex(index);
-		this.emitSandwich();
-	}
-	removeViande(index:number):void
-	{
-		const ing:Viande = this.clg_viandes[index];
-		ing.decCount();
-		if (ing.getCount()<1) {
-			this.sandwich.removeIngredient(ing);
-		}
-		this.emitSandwich();
-	}
-	removeFromage(index:number):void
-	{
-		const ing:Fromage = this.clg_fromages[index];
-		ing.decCount();
-		if (ing.getCount()<1) {
-			this.sandwich.removeIngredient(ing);
-		}
-		this.emitSandwich();
-	}
-
-	changePain(pain:Pain):void
-	{
-		this.sandwich.setPain(pain);
-	}
-
-	emitSandwich():void
-	{
-		this.comp_subject.next(this.sandwich.copy());
+		console.log(this.menu);
+		this.comp_subject.next(this.menu.copy());
 	}
 }

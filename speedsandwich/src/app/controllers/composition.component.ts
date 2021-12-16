@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Sandwich } from '../models/sandwich/sandwich';
 import { CompositionModel } from '../models/composition.model';
 
+import { Menu } from '../models/menu/menu';
 import { Pain } from '../models/ingredients/pains/pain';
 import { Viande } from '../models/ingredients/viandes/viande';
 import { Fromage } from '../models/ingredients/fromages/fromage';
@@ -16,7 +16,7 @@ import { Boisson } from '../models/ingredients/boissons/boisson';
 })
 export class CompositionComponent implements OnInit {
 
-  sandwich:Sandwich;
+  menu:Menu;
   clg_pains:Pain[];
   clg_viandes:Viande[];
   clg_fromages:Fromage[];
@@ -26,7 +26,7 @@ export class CompositionComponent implements OnInit {
 
   constructor(private comp_model:CompositionModel)
   {
-    this.sandwich = new Sandwich("", "");
+    this.menu = new Menu();
     this.clg_pains = this.comp_model.getClgPains();
     this.clg_viandes = this.comp_model.getClgViandes();
     this.clg_fromages = this.comp_model.getClgFromages();
@@ -35,41 +35,19 @@ export class CompositionComponent implements OnInit {
     this.clg_boissons = this.comp_model.getClgBoissons();
   }
 
-  onAddViande(index:number):void
+  onSelectDrink(index:number):void
   {
-    this.comp_model.addViande(index);
-  }
-  onAddFromage(index:number):void
-  {
-    this.comp_model.addFromage(index);
-  }
-
-  onRemoveIngredient(index:number):void
-  {
-    this.comp_model.removeIngredient(index);
-  }
-  onRemoveViande(index:number):void
-  {
-    this.comp_model.removeViande(index);
-  }
-  onRemoveFromage(index:number):void
-  {
-    this.comp_model.removeFromage(index);
-  }
-
-  onChangePain(pain:Pain):void
-  {
-    this.comp_model.changePain(pain);
+    this.comp_model.setDrink(index);
   }
 
   ngOnInit():void
   {
     this.comp_model.comp_subject.subscribe(
-      (sandwich:Sandwich) => {
-        this.sandwich = sandwich;
+      (menu:Menu) => {
+        this.menu = menu;
       }
     );
-    this.comp_model.emitSandwich();
+    this.comp_model.emitMenu();
   }
 
 }
