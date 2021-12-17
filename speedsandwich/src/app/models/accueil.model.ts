@@ -84,7 +84,7 @@ export class AccueilModel
 	public getSuggestions():Sandwich[]
 	{
 		var loc = [];
-		for (var i=0; i<5 ;++i) {
+		for (var i=0; i<this.sandwiches.length;++i) {
 			loc[i] = i;
 		}
 
