@@ -1,148 +1,134 @@
-<div>
-    <!--<div class="cataloguePain">
-      <h3>NOS PAINS</h3>
-      <div class="choix">
-        <ul>
-          <li *ngFor="let ing of cataloguePain; let index = index">
-            <div
-              class="{{ ing.toString() }}"
-              (click)="changePain(ing)"
-              id="catalogue"
-            >
-              {{ ing.getLibelle() }}
+<div class="catalogue-layout">
+  <div class="catalogue-choix">
+      <!--<div class="box">
+          <div class="box-header"><h3>Nos Pains</h3></div>
+         <div class="box-content">
+          <div class="box-loop" *ngFor="let ing of cataloguePain; let index = index">
+            <div class="box-content-ele" (click)="changePain(ing)">
+              <div class="box-content-img-label">{{ ing.getLibelle() }}</div>
+              <div class="box-content-img"><img [src]="ing.getImage()" width="200" height="200" class="image"></div>
             </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  
-    <div class="catalogueViande">
-      <h3>NOS VIANDES</h3>
-      <div class="choix">
-        <ul>
-          <li *ngFor="let ing of catalogueViande; let index = index">
-            <div class="{{ ing.toString() }}" id="catalogue">
-              {{ ing.getLibelle() }} à prix de {{ ing.getPrix() }} € l'unité
-              <div class="image">
-                <img [src]="ing.getImage()" width="200" height="200">
-              </div>
-              <div class="quantite">
-                <button (click)="remove(ing)">-</button>
-                {{ ing.getCount() }}
-                <button (click)="add(ing)">+</button>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  
-    <div class="catalogueFromage">
-      <h3>NOS FROMAGES</h3>
-      <div class="choix">
-        <ul>
-          <li *ngFor="let ing of catalogueFromage; let index = index">
-            <div class="{{ ing.toString() }}" id="catalogue">
-              {{ ing.getLibelle() }} à prix de {{ ing.getPrix() }} € l'unité
-              <div class="quantite">
-                <button (click)="remove(ing)">-</button>
-                {{ ing.getCount() }}
-                <button (click)="add(ing)">+</button>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  -->
-    <div class="catalogueSauce">
-      <h3>NOS SAUCES</h3>
-      <div class="choix">
-        <ul>
-          <li *ngFor="let sauce of clg_sauces; let i=index">
-            <div
-              (click)="onSelectSauce(i)"
-              id="catalogue"
-            >
-            {{ sauce.getLibelle() }}
-  
-            <div class="image">
-              <img src="sauce.src" width="100" height="100">
-            </div>
-  
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="catalogueSupp">
-      <h3>NOS SUPPLEMENTS</h3>
-      <div class="choix">
-        <ul>
-          <li *ngFor="let ing of clg_supplements; let i=index">
-            <div
-              (click)="onSelectAccompaniement(i)"
-              id="catalogue"
-            >
-              {{ ing.getLibelle() }}
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="catalogueBoisson">
-      <h3>NOS BOISSONS</h3>
-      <div class="choix">
-        <ul>
-          <li *ngFor="let drink of clg_boissons; let i=index">
-            <div
-              (click)="onSelectDrink(i)"
-              id="catalogue"
-            >
-              {{ drink.getLibelle() }}
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  
-    <div>
-      <button
-        routerLink="/panier"
-        routerLinkActive="active"
-        *ngIf="menu.complete()" (click)="onAddToPanier()"
-      >
-        Ajouter sandwich
-      </button>
-      <button routerLink="" routerLinkActive="active" (click)="onQuitCompo()">Annuler la création</button>
-      <p *ngIf="!menu.complete()">Composez votre menu pour l'ajouter au panier</p>
-    </div>
-
-    <div class="recap">
-        <div>
-          <div>
-            <h2>Vos ingrédients</h2>
           </div>
-      
-          <h2>VOS SANDWICHS</h2>
-          <div id="sandwich">
-            <a>
-              <h4>Sandwich numero :</h4>
-              <div>
-                  <div>
-                    <button>Retirer du panier</button>
-                  </div>
+         </div>
+      </div>-->
+
+      <!--<div class="box">
+        <div class="box-header"><h3>Nos Viandes</h3></div>
+       <div class="box-content">
+        <div class="box-loop" *ngFor="let ing of catalogueViande; let index = index">
+          <div class="box-content-ele">
+            <div class="box-content-img-label">{{ ing.getLibelle() }} à prix de {{ ing.getPrix() }} € l'unité</div>
+            <div class="box-content-img"><img [src]="ing.getImage()" width="200" height="200" class="image"></div>
+            <div class="quantite">
+              <button (click)="remove(ing)">-</button>
+              {{ ing.getCount() }}
+              <button (click)="add(ing)">+</button>
+            </div>
+          </div>
+        </div>
+       </div>
+      </div>-->
+
+      <!--<div class="box">
+        <div class="box-header"><h3>Nos fromages</h3></div>
+        <div class="box-content">
+          <div class="box-loop" *ngFor="let ing of catalogueFromage; let index = index">
+            <div class="box-content-ele">
+              <div class="box-content-img-label">{{ ing.getLibelle() }} à prix de {{ ing.getPrix() }} € l'unité</div>
+              <div class="box-content-img"><img [src]="ing.getImage()" width="200" height="200" class="image"></div>
+              <div class="quantite">
+                <button (click)="remove(ing)">-</button>
+                {{ ing.getCount() }}
+                <button (click)="add(ing)">+</button>
               </div>
-            </a>
+            </div>
+          </div>
+        </div>
+      </div>-->
+
+      <div class="box">
+        <div class="box-header"><h3>Nos sauces</h3></div>
+      <div class="box-content">
+        <div class="box-loop" *ngFor="let sauce of clg_sauces; let i = index">
+          <div class="box-content-ele">
+            <div class="box-content-img-label" (click)="onSelectSauce(i)">
+              {{ sauce.getLibelle() }}
+            </div>
+              <div class="box-content-img">              
+                <img src="sauce.src" width="200" height="200" class="image">
+              </div>
+            </div>
           </div>
         </div>
       </div>
+            
+
+      <div class="box">
+        <div class="box-header"><h3>Nos boissons</h3></div>
+      <div class="box-content">
+        <div class="box-loop" *ngFor="let drink of clg_boissons; let i = index">
+          <div class="box-content-ele">
+            <div class="box-content-img-label" (click)="onSelectDrink(i)">
+              {{ drink.getLibelle() }}
+            </div>
+              <div class="box-content-img">              
+                <img src="drink.src" width="200" height="200" class="image">
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!--</div>-->
+
+      <div class="box">
+        <div class="box-header"><h3>Nos suppléments</h3></div>
+      <div class="box-content">
+        <div class="box-loop" *ngFor="let ing of clg_supplements; let i = index">
+          <div class="box-content-ele">
+            <div class="box-content-img-label" (click)="onSelectAccompaniement(i)">
+              {{ ing.getLibelle() }}
+            </div>
+              <div class="box-content-img">              
+                <img src="ing.src" width="200" height="200" class="image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button
+          routerLink="/panier"
+          routerLinkActive="active"
+          *ngIf="menu.complete()" (click)="onAddToPanier()"
+        >
+          Ajouter sandwich
+        </button>
+        <button routerLink="" routerLinkActive="active" (click)="onQuitCompo()">Annuler la création</button>
+        <p *ngIf="!menu.complete()">Composez votre menu pour l'ajouter au panier</p>
+      </div>
+
+      <!--</div>-->
   </div>
-  
-  
-  
-  
-  
-  
+
+  <div class="catalogue-recap">
+      <h2>Vos ingrédients</h2>
+      <div class="catalogue-recap-prdts">
+          <p></p>
+      </div>
+
+      <h2>Vos sandwichs</h2>
+      <a>
+        <h3>Sandwich numero :</h3>
+        <div>
+          
+            <div>
+              <button>Retirer du panier</button>
+            </div>
+        </div>
+      </a>
+      <input type="text" id="textbox">
+  </div>
+</div>
