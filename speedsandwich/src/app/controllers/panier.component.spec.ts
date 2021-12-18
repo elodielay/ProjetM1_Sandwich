@@ -43,9 +43,4 @@ describe('PanierComponent', () => {
 
     fixture.detectChanges();
   });
-
-  it('should return a String', () => {
-    const comp = new PanierComponent(<PanierModel>panierModelStub, <MatDialog>matDialogStub);
-    expect(comp.toString).toBe("String");
-  });
 });
