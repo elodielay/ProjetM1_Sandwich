@@ -16,11 +16,13 @@ import { RechercheComponent } from './controllers/recherche.component';
 import { HeaderComponent } from './controllers/header.component';
 import { PageNonExistanteComponent } from './controllers/page-non-existante.component';
 import { SuggestionsComponent } from './controllers/suggestions.component';
+import { FooterComponent } from './controllers/footer.component';
 
 import { AccueilModel } from './models/accueil.model';
 import { CompositionModel } from './models/composition.model';
 import { PanierModel } from './models/panier.model';
 import { RechercheModel } from './models/recherche.model';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { RechercheModel } from './models/recherche.model';
     SuggestionsComponent,
     RechercheComponent,
     HeaderComponent,
-    PageNonExistanteComponent
+    PageNonExistanteComponent, 
+    FooterComponent
   ],
   imports: [
     BrowserModule,
