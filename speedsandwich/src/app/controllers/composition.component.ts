@@ -19,6 +19,7 @@ import { Boisson } from '../models/ingredients/boissons/boisson';
 })
 export class CompositionComponent {
 
+
   menu!:Menu;
   clg_pains:Pain[];
   clg_viandes:Viande[];
@@ -45,12 +46,14 @@ export class CompositionComponent {
 
   onQuitCompo():void
   {
-    this.comp_model.initDefault();
+    this.comp_model.initDefault("");
   }
   onAddToPanier():void
   {
+    var element = (<HTMLInputElement>document.getElementById("nameMenu")).value;
+    this.comp_model.setName(element);
     this.panier_model.addItem(this.menu.copy());
-    this.comp_model.initDefault();
+    this.comp_model.initDefault(element);
   }
 
   onSelectSauce(index:number):void

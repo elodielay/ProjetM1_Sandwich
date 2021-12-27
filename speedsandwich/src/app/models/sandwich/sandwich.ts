@@ -39,7 +39,7 @@ export class Sandwich {
 
     toString():string{
         var final : string = "";
-        final+= "\n" + this.name  +' : pour le prix de ' + this.getPrix().toFixed(2) + ' €';
+        final+= "\n" + this.name  +' : pour le prix de ';
         final.replace("\n", "<br>");
         return final;
     }
