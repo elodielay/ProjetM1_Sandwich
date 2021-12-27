@@ -6,6 +6,6 @@ export class Mayonnaise extends Sauce{
         this.prix = 0.5;
         this.libelle = "Mayonnaise";
         this.count = 0;
-        this.src = "image";
+        this.src = "https://www.marciatack.fr/wp-content/uploads/2020/11/Mayonnaise-maison.jpg";
     }
 }

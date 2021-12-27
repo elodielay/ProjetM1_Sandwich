@@ -6,6 +6,6 @@ export class Moutarde extends Sauce{
         this.prix = 0.5;
         this.libelle = "Moutarde";
         this.count = 0;
-        this.src = "image";
+        this.src = "https://cdn.pixabay.com/photo/2014/08/10/21/34/mustard-415119_1280.jpg";
     }
 }

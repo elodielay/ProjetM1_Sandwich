@@ -6,6 +6,6 @@ export class Ketchup extends Sauce{
         this.prix = 0.5;
         this.libelle = "Ketchup";
         this.count = 0;
-        this.src = "image";
+        this.src = "https://cdn.pixabay.com/photo/2014/05/28/12/26/ketchup-356439_1280.jpg";
     }
 }
