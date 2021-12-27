@@ -102,6 +102,17 @@ export class CompositionModel
 		this.menu.setSauce(sauce);
 		this.emitMenu();
 	}
+	setName(menu:string):void
+	{
+		const name = menu;
+		if(name.length==0){
+			this.created++;
+			this.menu.setName("Menu n° "+this.created.toString());
+		}else{
+			this.menu.setName(name);
+		}
+		this.emitMenu();
+	}
 	setAccompaniement(index:number):void
 	{
 		const accompaniement = this.clg_supplements[index];
@@ -118,13 +129,12 @@ export class CompositionModel
 	constructor()
 	{
 		this.created = 0;
-		this.initDefault();
+		this.initDefault("");
 	}
 
-	initDefault():void
+	initDefault(menu:string):void
 	{
-		this.created++;
-		const name = ("Mon menu "+this.created);
+		const name = (menu);
 		this.menu = new Menu(name);
 		this.emitMenu();
 	}

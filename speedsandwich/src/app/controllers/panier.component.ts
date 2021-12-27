@@ -22,7 +22,8 @@ export class PanierComponent implements OnInit {
   {
     this.sub = this.panier_model.panier_subject.subscribe(
       (sandwichs:any[][]) => {
-        this.sandwichs = sandwichs;
+        this.sandwichs = this.panier_model.articles;
+        
       }
     );
   }
@@ -48,13 +49,10 @@ export class PanierComponent implements OnInit {
 
   onCommande():void
   {
-    let validation : boolean = true;
-
-      
-      
-      const adresse = (<HTMLInputElement>document.getElementById("adresse")).value;
-      const nom = (<HTMLInputElement>document.getElementById("nom")).value;
-      const prenom = (<HTMLInputElement>document.getElementById("prenom")).value;
+    let validation : boolean = true; 
+    const adresse = (<HTMLInputElement>document.getElementById("adresse")).value;
+    const nom = (<HTMLInputElement>document.getElementById("nom")).value;
+    const prenom = (<HTMLInputElement>document.getElementById("prenom")).value;
 
     if(this.isNum(prenom)==false||this.isNum(nom)==false){
       validation=false;
@@ -78,7 +76,11 @@ export class PanierComponent implements OnInit {
       this.dialog.open(DialogContentExampleDialog, {
         data: { name: this.toString() },
       });
-    }
+    } 
+    this.clearPanier();
+  }
+  clearPanier(){
+    this.panier_model.articles=[];
   }
   isNum(val : string):boolean{
     let isnum = /^[a-zA-Z]+$/.test(val);
@@ -90,7 +92,7 @@ export class PanierComponent implements OnInit {
     const prenom = (<HTMLInputElement>document.getElementById("prenom")).value;
     final += "Voici votre commande "+nom.toUpperCase() + " " + prenom;
     this.sandwichs!.forEach(element => {
-      final+= "\n"+element.toString();
+      final+=  element[0].toString() + (element[0].getPrix() * element[1]).toFixed(2) + "€" + " (x"+element[1]+")";
     });
     final.replace("\n", "<br>");
     return final;
