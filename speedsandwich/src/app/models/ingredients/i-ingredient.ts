@@ -1,4 +1,5 @@
-export interface IIngredient {
+export interface IIngredient
+{
     getPrix():number;
     toString():string;
     getCount():number;
@@ -8,5 +9,4 @@ export interface IIngredient {
     incCount():void;
     decCount():void;
     setCount(n:number):void;
-    
 }

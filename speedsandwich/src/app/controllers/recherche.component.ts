@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RechercheModel } from '../models/recherche.model';
 import { Sandwich } from '../models/sandwich/sandwich';
 import { PanierModel } from '../models/panier.model';
@@ -8,8 +8,8 @@ import { PanierModel } from '../models/panier.model';
   templateUrl: '../views/recherche.component.html',
   styleUrls: ['../stylesheets/recherche.component.css']
 })
-export class RechercheComponent implements OnInit {
-
+export class RechercheComponent
+{
   sandwiches:Sandwich[] = [];
   ing: string = "";
   recherche_model: RechercheModel = new RechercheModel;
@@ -29,10 +29,8 @@ export class RechercheComponent implements OnInit {
     this.hiddenSearch = true;
   }
 
-  ngOnInit(): void {}
-
-  onSearch() {
-
+  onSearch():void
+  {
     this.sandwiches.splice(0, this.sandwiches.length);
     
     this.recherche_model.fetchListeSandwich(this.ing);
@@ -43,9 +41,6 @@ export class RechercheComponent implements OnInit {
     }
 
     this.recherche_model.viderListeData();
-
-    
-    
 	}
 
   onAjoute(index:number):void
@@ -54,5 +49,4 @@ export class RechercheComponent implements OnInit {
     this.panier_model.addItem(this.sandwich);
   
   }
-
 }

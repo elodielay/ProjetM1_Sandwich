@@ -68,6 +68,7 @@ export class Menu
 		copy.setDrink(this.drink);
 		return copy;
 	}
+
 	toString():string{
         var final : string = "";
         final+= "\n" + this.name  +' : pour le prix de ';

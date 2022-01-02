@@ -1,7 +1,9 @@
 import { Pain } from "./pain";
 
-export class PainPita extends Pain{
-    constructor(){
+export class PainPita extends Pain
+{
+    constructor()
+    {
         super();
         this.prix = 0.5;
         this.libelle = "Pain Pita";

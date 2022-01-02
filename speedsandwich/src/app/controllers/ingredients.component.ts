@@ -9,8 +9,8 @@ import { PanierModel } from '../models/panier.model';
   templateUrl: '../views/ingredients.component.html',
   styleUrls: ['../stylesheets/ingredients.component.css']
 })
-export class IngredientsComponent {
-
+export class IngredientsComponent
+{
   sandwich!:Sandwich;
 
   constructor(private accueil_model:AccueilModel, private comp_model:CompositionModel, private panier_model:PanierModel)

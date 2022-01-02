@@ -1,7 +1,9 @@
 import { Supplements } from "./supplements";
 
-export class Frite extends Supplements{
-    constructor(){
+export class Frite extends Supplements
+{
+    constructor()
+    {
         super();
         this.prix = 0.5;
         this.libelle = "Frites";

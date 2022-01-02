@@ -8,9 +8,9 @@ import { AccueilModel } from './accueil.model';
 export class RechercheModel
 {
 	private sandwiches:Sandwich[] = plainToInstance(Sandwich, SandwichJson);
-	private sandwichsData?:Sandwich[] = [];
+	private sandwichsData:Sandwich[] = [];
 	recherche_subject = new Subject<Sandwich>();
-	private selected?:Sandwich;
+	private selected!:Sandwich;
 
 	fetchListeSandwich(ing:string)
 	{
@@ -28,13 +28,14 @@ export class RechercheModel
 		}
 	}
 
-	public getSandwichData(): Sandwich[]
+	public getSandwichData():Sandwich[]
 	{
-		return this.sandwichsData!;
+		return this.sandwichsData;
 	}
 
-	public viderListeData() {
-		this.sandwichsData?.splice(0, this.sandwichsData.length);
+	public viderListeData():void
+	{
+		this.sandwichsData.splice(0, this.sandwichsData.length);
 	}
 
 	public setSelected(index:number):void
@@ -47,7 +48,4 @@ export class RechercheModel
 	{
 		this.recherche_subject.next(this.selected!);
 	}
-
-	
-
 }
