@@ -43,7 +43,7 @@ export class RechercheComponent
     this.recherche_model.viderListeData();
 	}
 
-  onAjoute(index:number):void
+  onAdd(index:number):void
   {
     this.rechercheModel.setSelected(index);
     this.panier_model.addItem(this.sandwich);

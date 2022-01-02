@@ -30,9 +30,9 @@ export class PanierComponent implements OnInit
     this.panier_model.emitSandwichs();
   }
 
-  getPrixTotal():number
+  getTotalPrice():number
   {
-    return this.panier_model.getPrixTotal();
+    return this.panier_model.getTotalPrice();
   }
 
   onAdd(index:number):void

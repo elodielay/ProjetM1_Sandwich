@@ -2,16 +2,16 @@ import { IIngredient } from "../i-ingredient";
 
 export abstract class Fromage implements IIngredient
 {
-    prix : number = 0;
-    libelle : string = "";
-    count : number = 0;
-    src : string = "";
+    price:number = 0;
+    wording:string = "";
+    count:number = 0;
+    src:string = "";
 
     constructor() {}
 
     setCount(n:number):void
     {
-        this.count=n;
+        this.count = n;
     }
     decCount():void 
     {
@@ -19,9 +19,9 @@ export abstract class Fromage implements IIngredient
             this.count--;
         }   
     }
-    getPrix():number
+    getPrice():number
     {
-        return this.prix;
+        return this.price;
     }
     getImage():string
     {
@@ -31,9 +31,9 @@ export abstract class Fromage implements IIngredient
     {
         return this.count;
     }
-    getLibelle():string
+    getWording():string
     {
-        return this.libelle;
+        return this.wording;
     }
     incCount():void
     {
@@ -41,6 +41,6 @@ export abstract class Fromage implements IIngredient
     }
     toString():string
     {
-        return this.libelle + " : " + this.getPrix()*this.getCount();
+        return this.wording + " : " + this.getPrice()*this.getCount();
     };  
 }

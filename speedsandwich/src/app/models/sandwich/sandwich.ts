@@ -20,13 +20,13 @@ export class Sandwich
       this.ingredients.push(ingredient);
     }
 
-    getPrix():number
+    getPrice():number
     {
-      let prix : number = 0;
+      let price : number = 0;
       this.ingredients!.forEach(element => {
-        prix += element.getPrix()
+        price += element.getPrice()
       });
-      return prix;
+      return price;
     }
 
     copy():Sandwich

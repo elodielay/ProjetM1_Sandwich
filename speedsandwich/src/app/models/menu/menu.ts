@@ -14,12 +14,12 @@ export class Menu
 	private drink!:Boisson;
 	image!:string;
 
-	getPrix():number
+	getPrice():number
 	{
-		let prix = this.sandwich.getPrix();
-		prix += this.accompaniement!.prix;
-		prix += this.drink!.prix;
-		return prix;
+		let price = this.sandwich.getPrice();
+		price += this.accompaniement!.getPrice();
+		price += this.drink!.getPrice();
+		return price;
 	}
 
 	setName(name:string)

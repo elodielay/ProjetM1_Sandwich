@@ -2,8 +2,8 @@ import { IIngredient } from "../i-ingredient";
 
 export abstract class Boisson implements IIngredient
 {
-    prix:number = 0;
-    libelle:string = "";
+    price:number = 0;
+    wording:string = "";
     count:number = 1;
     src:string = "";
 
@@ -18,17 +18,17 @@ export abstract class Boisson implements IIngredient
         this.count = 0;
     }
 
-    getPrix():number
+    getPrice():number
     {
-        return this.prix;
+        return this.price;
     }
     getCount():number
     {
         return this.count;
     }
-    getLibelle():string
+    getWording():string
     {
-        return this.libelle;
+        return this.wording;
     }
     getImage():string
     {
@@ -40,6 +40,6 @@ export abstract class Boisson implements IIngredient
     }
     toString():string
     {
-        return this.libelle + " : " + this.getPrix()*this.getCount();
+        return this.wording + " : " + this.getPrice()*this.getCount();
     };
 }

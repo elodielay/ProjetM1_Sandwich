@@ -13,10 +13,10 @@
             <img [src]="sandwich.image" width="130" height="130">
             <div class="nom-prix">
                 <p class="nom-sandwich">{{sandwich.name}}</p>
-                <p class="prix-sandwich">{{sandwich.getPrix()}} €</p>
+                <p class="prix-sandwich">{{sandwich.getPrice()}} €</p>
             </div>
 
-            <button id="data" routerLink="/panier" routerLinkActive="active" class="bouton-sandwich" (click)="onAjoute(sandwich.id-1)">Ajouter au panier</button>
+            <button id="data" routerLink="/panier" routerLinkActive="active" class="bouton-sandwich" (click)="onAdd(sandwich.id-1)">Ajouter au panier</button>
 
         </div>
     </div>

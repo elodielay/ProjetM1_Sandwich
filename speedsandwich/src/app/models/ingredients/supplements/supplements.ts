@@ -2,10 +2,10 @@ import { IIngredient } from "../i-ingredient";
 
 export abstract class Supplements implements IIngredient
 {
-    prix : number = 0;
-    libelle : string = "";
-    count : number = 1;
-    src : string = "";
+    price:number = 0;
+    wording:string = "";
+    count:number = 1;
+    src:string = "";
 
     constructor() {}
     setCount(n:number):void
@@ -20,17 +20,17 @@ export abstract class Supplements implements IIngredient
     {
         return this.src;
     }
-    getPrix():number
+    getPrice():number
     {
-        return this.prix;
+        return this.price;
     }
     getCount():number
     {
         return this.count;
     }
-    getLibelle():string
+    getWording():string
     {
-        return this.libelle;
+        return this.wording;
     }
     incCount():void
     {
@@ -38,6 +38,6 @@ export abstract class Supplements implements IIngredient
     }
     toString():string
     {
-        return this.libelle + " : " + this.getPrix()*this.getCount();
+        return this.wording + " : " + this.getPrice()*this.getCount();
     };
 }
