@@ -11,19 +11,17 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
   templateUrl: '../views/panier.component.html',
   styleUrls: ['../stylesheets/panier.component.css']
 })
-export class PanierComponent implements OnInit {
-
+export class PanierComponent implements OnInit
+{
   sandwichs?:any[][];
-
   private sub:Subscription;
-
+  public validation:boolean =true;
 
   constructor(private panier_model:PanierModel, public dialog: MatDialog)
   {
     this.sub = this.panier_model.panier_subject.subscribe(
       (sandwichs:any[][]) => {
         this.sandwichs = this.panier_model.articles;
-        
       }
     );
   }
@@ -33,7 +31,7 @@ export class PanierComponent implements OnInit {
     this.panier_model.emitSandwichs();
   }
 
-  getPrixTotal():number
+  getTotalPrice():number
   {
     return this.panier_model.getPrixTotal();
   }
@@ -49,44 +47,52 @@ export class PanierComponent implements OnInit {
 
   onCommande():void
   {
-    let validation : boolean = true; 
+ 
     const adresse = (<HTMLInputElement>document.getElementById("adresse")).value;
     const nom = (<HTMLInputElement>document.getElementById("nom")).value;
     const prenom = (<HTMLInputElement>document.getElementById("prenom")).value;
 
-    if(this.isNum(prenom)==false||this.isNum(nom)==false){
-      validation=false;
+    if (this.isNum(prenom)==false||this.isNum(nom)==false) {
+      this.validation=false;
       alert("Veuillez saisir vos données.")
     }
-    if(this.sandwichs!.length==0){
-      validation=false;
+    if (this.sandwichs!.length==0) {
+      this.validation=false;
       alert("Pas de sandwich dans votre panier")
     }
-    if(prenom.length<0||nom.length<0||adresse.length<0){
-      validation=false;
+    if (prenom.length<0||nom.length<0||adresse.length<0) {
+      this.validation=false;
       alert("Veuillez saisir vos données.")
     }
-      const numero = (<HTMLInputElement>document.getElementById("telephone")).value;
-      if(this.checknum(numero)==false){
+    const numero = (<HTMLInputElement>document.getElementById("telephone")).value;
+    if (this.checknum(numero)==false) {
         alert("Problème avec le numéro de téléphone")
-        validation = false;
+        this.validation = false;
     }
-    if(validation==true){
+
+    if (this.validation==true) {
       const dialogConfig = new MatDialogConfig();
       this.dialog.open(DialogContentExampleDialog, {
         data: { name: this.toString() },
       });
     } 
-    this.clearPanier();
+    if(this.validation==true){
+      this.clearPanier();
+
+    }
+    
   }
-  clearPanier(){
+  clearPanier():void
+  {
     this.panier_model.articles=[];
   }
-  isNum(val : string):boolean{
+  isNum(val:string):boolean
+  {
     let isnum = /^[a-zA-Z]+$/.test(val);
     return isnum;
   }
-  toString():string{
+  toString():string
+  {
     var final:string = "";
     const nom = (<HTMLInputElement>document.getElementById("nom")).value;
     const prenom = (<HTMLInputElement>document.getElementById("prenom")).value;
@@ -97,33 +103,31 @@ export class PanierComponent implements OnInit {
     final.replace("\n", "<br>");
     return final;
   }
-   checknum(num : string):boolean{
-      var bon:boolean = false;
-      var valide = new RegExp(/^0[1-9]\d{8}$/);
-      if(valide.test(num)){
-          bon=true;
-      }
-      return bon;
+  checknum(num : string):boolean{
+    var bon:boolean = false;
+    var valide = new RegExp(/^0[1-9]\d{8}$/);
+    if (valide.test(num)) {
+      bon=true;
     }
+    return bon;
+  }
   isEmail(search:string):boolean
-    {
-        var serchfind:boolean=false;
+  {
+    var serchfind:boolean=false;
 
-        var regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-        serchfind = regexp.test(search);
+    var regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+    serchfind = regexp.test(search);
 
-        console.log(serchfind)
-        return serchfind
-    }
+    console.log(serchfind)
+    return serchfind
+  }
 }
 
 @Component({
-  
   selector: 'dialog-content-example-dialog',
   templateUrl: '../views/dialog-content-example-dialog.html',
-  
 })
-export class DialogContentExampleDialog {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: {name: string}) { }
-  
+export class DialogContentExampleDialog
+{
+  constructor(@Inject(MAT_DIALOG_DATA) public data: {name: string}) {}
 }

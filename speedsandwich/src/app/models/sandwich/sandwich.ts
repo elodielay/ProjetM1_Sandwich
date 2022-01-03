@@ -1,11 +1,12 @@
 import { IIngredient } from "../ingredients/i-ingredient";
 
-
-export class Sandwich {
+export class Sandwich
+{
     id:number;
     name:string;
     image:string;
     ingredients:IIngredient[];
+
 
     getSupplements():IIngredient[]
     {
@@ -24,12 +25,13 @@ export class Sandwich {
       this.ingredients.push(ingredient);
     }
 
-    getPrix():number{
-      let prix : number = 0;
+    getPrix():number
+    {
+      let price : number = 0;
       this.ingredients!.forEach(element => {
-        prix += element.getPrice()
+        price += element.getPrice()
       });
-      return prix;
+      return price;
     }
 
     copy():Sandwich
@@ -41,7 +43,8 @@ export class Sandwich {
       return sandwich;
     }
 
-    toString():string{
+    toString():string
+    {
         var final : string = "";
         final+= "\n" + this.name  +' : pour le prix de ';
         final.replace("\n", "<br>");
