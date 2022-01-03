@@ -102,4 +102,7 @@ button:hover {
     margin-top: 10px;
 }
 
-
+.box-instruction{
+    padding-top: 20px;
+    padding-bottom: 0px;
+}

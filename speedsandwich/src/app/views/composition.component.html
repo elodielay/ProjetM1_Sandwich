@@ -1,6 +1,52 @@
 <div class="catalogue-layout">
   <div class="catalogue-choix">
 
+      <!--<div class="box">
+          <div class="box-header"><h3>Nos Pains</h3></div>
+         <div class="box-content">
+          <div class="box-loop" *ngFor="let ing of cataloguePain; let index = index">
+            <div class="box-content-ele" (click)="changePain(ing)">
+              <div class="box-content-img-label">{{ ing.getLibelle() }}</div>
+              <div class="box-content-img"><img [src]="ing.getImage()" width="200" height="200" class="image"></div>
+            </div>
+          </div>
+         </div>
+      </div>-->
+
+      <!--<div class="box">
+        <div class="box-header"><h3>Nos Viandes</h3></div>
+       <div class="box-content">
+        <div class="box-loop" *ngFor="let ing of catalogueViande; let index = index">
+          <div class="box-content-ele">
+            <div class="box-content-img-label">{{ ing.getLibelle() }} à prix de {{ ing.getPrix() }} € l'unité</div>
+            <div class="box-content-img"><img [src]="ing.getImage()" width="200" height="200" class="image"></div>
+            <div class="quantite">
+              <button (click)="remove(ing)">-</button>
+              {{ ing.getCount() }}
+              <button (click)="add(ing)">+</button>
+            </div>
+          </div>
+        </div>
+       </div>
+      </div>-->
+
+      <!--<div class="box">
+        <div class="box-header"><h3>Nos fromages</h3></div>
+        <div class="box-content">
+          <div class="box-loop" *ngFor="let ing of catalogueFromage; let index = index">
+            <div class="box-content-ele">
+              <div class="box-content-img-label">{{ ing.getLibelle() }} à prix de {{ ing.getPrix() }} € l'unité</div>
+              <div class="box-content-img"><img [src]="ing.getImage()" width="200" height="200" class="image"></div>
+              <div class="quantite">
+                <button (click)="remove(ing)">-</button>
+                {{ ing.getCount() }}
+                <button (click)="add(ing)">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>-->
+
       <div class="box">
         <div class="box-header"><h3>Nos sauces</h3></div>
       <div class="box-content">
@@ -69,7 +115,16 @@
   </div>
 
   <div class="catalogue-recap">
-    <div class="box-content">
+    <div class="box-instruction">
+      <h3>Voici les ingrédients sélectionnés</h3>
+    </div>
+    <div>
+      {{this.menu!.getSauce()?.getWording()}}
+      {{this.menu!.getDrink()?.getWording()}}
+      {{this.menu!.getAccompaniement()?.getWording()}}
+      
+    </div>
+    <div class="box-instruction">
       <h3>Veuillez rentrer un nom pour votre menu</h3>
     </div>
     <input type="text" id="nameMenu">
