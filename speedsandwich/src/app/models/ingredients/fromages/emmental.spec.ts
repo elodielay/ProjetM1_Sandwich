@@ -6,10 +6,10 @@ describe('Emmental', () => {
   });
 
   it('should cost 0.5', () => {
-    expect(new Emmental().prix).toEqual(0.5);
+    expect(new Emmental().price).toEqual(0.5);
   });
 
   it('should be named Emmental', () => {
-    expect(new Emmental().libelle).toEqual("Emmental");
+    expect(new Emmental().wording).toEqual("Emmental");
   });
 });

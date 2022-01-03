@@ -6,10 +6,10 @@ describe('SteackHache', () => {
   });
 
   it('should cost 0.5', () => {
-    expect(new SteackHache().prix).toEqual(0.5);
+    expect(new SteackHache().price).toEqual(0.5);
   });
 
   it('should be named Steak Hache', () => {
-    expect(new SteackHache().libelle).toEqual("Steak Hache");
+    expect(new SteackHache().wording).toEqual("Steak Hache");
   });
 });

@@ -6,10 +6,10 @@ describe('Moutarde', () => {
   });
 
   it('should cost 0.5', () => {
-    expect(new Moutarde().prix).toEqual(0.5);
+    expect(new Moutarde().price).toEqual(0.5);
   });
 
   it('should be named Moutarde', () => {
-    expect(new Moutarde().libelle).toEqual("Moutarde");
+    expect(new Moutarde().wording).toEqual("Moutarde");
   });
 });
