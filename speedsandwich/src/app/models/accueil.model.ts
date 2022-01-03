@@ -26,43 +26,27 @@ export class AccueilModel
 
 	public getSandwiches():Sandwich[]
 	{
-		this.sandwiches[0].ingredients = [
-			new PainBaguette,
-			new SteackHache,
-			new Ketchup,
-			new Cheddar
+		this.sandwiches[0].supplement = [
+			new PainBaguette
 		];
 
-		this.sandwiches[1].ingredients = [
-			new PainBaguette,
-			new PouletFrit,
-			new Mayonnaise,
-			new Cheddar
+		this.sandwiches[1].supplement = [
+			new PainBaguette
 		];
 
-		this.sandwiches[2].ingredients = [
-			new PainPita,
-			new PouletFrit,
-			new Moutarde,
-			new Emmental
+		this.sandwiches[2].supplement = [
+			new PainPita
 		];
 
-		this.sandwiches[3].ingredients = [
-			new PainPita,
-			new PouletFrit,
-			new Moutarde,
-			new Emmental,
-			new Chevre
+		this.sandwiches[3].supplement = [
+			new PainPita
 		];
 
-		this.sandwiches[4].ingredients = [
-			new PainPita,
-			new SteackHache,
-			new Ketchup,
-			new Cheddar,
-			new Emmental,
-			new Chevre
+		this.sandwiches[4].supplement = [
+			new PainPita
 		];
+
+		console.log(this.sandwiches);
 
 		return this.sandwiches;
 	}

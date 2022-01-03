@@ -6,30 +6,38 @@ export abstract class Sauce implements IIngredient {
     count : number =1;
     src : string = "";
 
-    constructor(){
-    }
-    setCount(n : number):void{
+    constructor(){}
+
+    setCount(n : number):void
+    {
         this.count=n;
     }
-    decCount(): void {
+    decCount(): void 
+    {
         this.count=0;
     }
-    getImage():string{
+    getImage():string
+    {
         return this.src;
     }
-    getPrice():number{
+    getPrice():number
+    {
         return this.price;
     }
-    getCount():number{
+    getCount():number
+    {
         return this.count;
     }
-    getWording():string{
+    getWording():string
+    {
         return this.wording;
     }
-    incCount(){
+    incCount()
+    {
         this.count= 1;
     }
-    toString():string{
+    toString():string
+    {
         return this.wording + " : " + this.getPrice()*this.getCount();
     };
 }

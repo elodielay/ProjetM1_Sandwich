@@ -1,31 +1,51 @@
 [{
         "id": 1,
         "name": "Burger au steak haché",
-        "image": "../../assets/burger_boeuf.jpg"
+        "image": "../../assets/burger_boeuf.jpg", 
+        "baseIng": [
+            "Steak haché",
+            "Cheddar"
+        ]
     },
 
     {
         "id": 2,
         "name": "Burger au poulet frit",
-        "image": "../../assets/burger_poulet.jpg"
+        "image": "../../assets/burger_poulet.jpg",
+        "baseIng": [
+            "Poulet frit",
+            "Cheddar"
+        ]
     },
 
     {
         "id": 3,
         "name": "Club sandwich poulet",
-        "image": "../../assets/club_sandwich.jpg"
+        "image": "../../assets/club_sandwich.jpg",
+        "baseIng": [
+            "Poulet frit",
+            "Emmental"
+        ]
     },
 
     {
         "id": 4,
         "name": "Sandwich dinde",
-        "image": "../../assets/sandwich_dinde.jpg"
+        "image": "../../assets/sandwich_dinde.jpg",
+        "baseIng": [
+            "Dinde",
+            "Chevre"
+        ]
     },
 
     {
         "id": 5,
         "name": "Sandwich poulet",
-        "image": ".../../assets/sandwich.jpg"
+        "image": ".../../assets/sandwich.jpg",
+        "baseIng": [
+            "Dinde",
+            "Cheddar"
+        ]
     }
 
 ]

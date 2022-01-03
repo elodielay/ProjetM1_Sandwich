@@ -1,11 +1,15 @@
 import { IIngredient } from "../ingredients/i-ingredient";
+import { Type } from 'class-transformer';
 
 export class Sandwich
 {
     id:number;
     name:string;
     image:string;
-    ingredients:IIngredient[];
+    supplement:IIngredient[];
+
+    @Type(() => String)
+    baseIng: String[];
 
 
     getSupplements():IIngredient[]
@@ -13,31 +17,33 @@ export class Sandwich
       return this.ingredients.slice();
     }
 
-    constructor(id:number, name:string, image:string){
+    constructor(id:number, name:string, image:string, baseIng: String[])
+    {
       this.id = id;
       this.name = name;
       this.image = image;
-      this.ingredients = new Array(0);
+      this.supplement = new Array(0);
+      this.baseIng = new Array(0);
     }
 
     addIngredient(ingredient:IIngredient):void
     {
-      this.ingredients.push(ingredient);
+      this.supplement.push(ingredient);
     }
 
-    getPrix():number
-    {
-      let price : number = 0;
-      this.ingredients!.forEach(element => {
-        price += element.getPrice()
+
+    getPrice():number{
+      let prix : number = 0;
+      this.supplement!.forEach(element => {
+        prix += element.getPrice()
       });
       return price;
     }
 
     copy():Sandwich
     {
-      const sandwich = new Sandwich(this.id, this.name, this.image);
-      this.ingredients.forEach(ingredient => {
+      const sandwich = new Sandwich(this.id, this.name, this.image, this.baseIng);
+      this.supplement.forEach(ingredient => {
         sandwich.addIngredient(ingredient);
       });
       return sandwich;

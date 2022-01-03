@@ -8,7 +8,8 @@ import { Sandwich } from '../models/sandwich/sandwich';
   templateUrl: '../views/suggestions.component.html',
   styleUrls: ['../stylesheets/suggestions.component.css']
 })
-export class SuggestionsComponent {
+export class SuggestionsComponent 
+{
 
   selected?:Sandwich;
   sandwiches:Sandwich[];

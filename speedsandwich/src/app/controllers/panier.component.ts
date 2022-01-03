@@ -11,8 +11,10 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
   templateUrl: '../views/panier.component.html',
   styleUrls: ['../stylesheets/panier.component.css']
 })
-export class PanierComponent implements OnInit
+
+export class PanierComponent implements OnInit 
 {
+
   sandwichs?:any[][];
   private sub:Subscription;
   public validation:boolean =true;
@@ -33,7 +35,7 @@ export class PanierComponent implements OnInit
 
   getTotalPrice():number
   {
-    return this.panier_model.getPrixTotal();
+    return this.panier_model.getTotalPrice();
   }
 
   onAdd(index:number):void
@@ -98,7 +100,7 @@ export class PanierComponent implements OnInit
     const prenom = (<HTMLInputElement>document.getElementById("prenom")).value;
     final += "Voici votre commande "+nom.toUpperCase() + " " + prenom;
     this.sandwichs!.forEach(element => {
-      final+=  element[0].toString() + (element[0].getPrix() * element[1]).toFixed(2) + "€" + " (x"+element[1]+")";
+      final+=  element[0].toString() + (element[0].getPrice() * element[1]).toFixed(2) + "€" + " (x"+element[1]+")";
     });
     final.replace("\n", "<br>");
     return final;

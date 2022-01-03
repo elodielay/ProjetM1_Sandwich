@@ -7,7 +7,8 @@ import { Sandwich } from '../models/sandwich/sandwich';
   templateUrl: '../views/liste-sandwich.component.html',
   styleUrls: ['../stylesheets/liste-sandwich.component.css']
 })
-export class ListeSandwichComponent {
+export class ListeSandwichComponent 
+{
 
   selected?:Sandwich;
   sandwiches:Sandwich[] = [];

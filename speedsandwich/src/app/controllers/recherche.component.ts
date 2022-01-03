@@ -8,7 +8,8 @@ import { PanierModel } from '../models/panier.model';
   templateUrl: '../views/recherche.component.html',
   styleUrls: ['../stylesheets/recherche.component.css']
 })
-export class RechercheComponent implements OnInit {
+export class RechercheComponent implements OnInit 
+{
 
   sandwiches:Sandwich[] = [];
   ing: string = "";
@@ -31,7 +32,8 @@ export class RechercheComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSearch() {
+  onSearch() 
+  {
 
     this.sandwiches.splice(0, this.sandwiches.length);
     
@@ -48,7 +50,7 @@ export class RechercheComponent implements OnInit {
     
 	}
 
-  onAjoute(index:number):void
+  onAdd(index:number):void
   {
     this.rechercheModel.setSelected(index);
     this.panier_model.addItem(this.sandwich);

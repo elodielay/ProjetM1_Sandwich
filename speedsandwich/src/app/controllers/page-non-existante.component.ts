@@ -5,11 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: '../views/page-non-existante.component.html',
   styleUrls: ['../stylesheets/page-non-existante.component.css']
 })
-export class PageNonExistanteComponent implements OnInit {
+export class PageNonExistanteComponent implements OnInit 
+{
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }
