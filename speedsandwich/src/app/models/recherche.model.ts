@@ -12,6 +12,7 @@ export class RechercheModel
 	recherche_subject = new Subject<Sandwich>();
 	private selected?:Sandwich;
 
+	// Méthode qui cherche les sandwich resultant de la recherche 
 	fetchListeSandwich(ing:string)
 	{
 		let accueilMod: AccueilModel = new AccueilModel;
@@ -28,11 +29,13 @@ export class RechercheModel
 		}
 	}
 
+	// Méthode qui retourne la liste des sandwichs resultant de la recherche
 	public getSandwichData(): Sandwich[]
 	{
 		return this.sandwichsData!;
 	}
 
+	// Méthode qui vide la liste des sandwichs resultant de la recherche
 	public viderListeData() {
 		this.sandwichsData?.splice(0, this.sandwichsData.length);
 	}

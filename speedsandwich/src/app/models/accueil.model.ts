@@ -21,12 +21,12 @@ export class AccueilModel
 	accueil_subject = new Subject<Sandwich>();
 
 	private selected?:Sandwich;
-	private sandwiches:Sandwich[] = plainToInstance(Sandwich, SandwichJson);
+	private sandwiches:Sandwich[] = plainToInstance(Sandwich, SandwichJson); // transforme les objets JSON en objets Sandwich 
 	private suggestions:Sandwich[] = [];
 
 	public getSandwiches():Sandwich[]
 	{
-		this.sandwiches[0].ingredients = [
+		this.sandwiches[0].ingredients = [ // ajoute les ingredients aux sandwichs
 			new PainBaguette,
 			new SteackHache,
 			new Ketchup,
@@ -67,6 +67,7 @@ export class AccueilModel
 		return this.sandwiches;
 	}
 
+	// randomiser la liste des suggestions 
 	private createRandomArray(array:number[]) 
 	{
 		var tmp, current, top=array.length;
@@ -81,6 +82,8 @@ export class AccueilModel
 		return array;
 	}
 
+
+	// retourne la liste des suggestions 
 	public getSuggestions():Sandwich[]
 	{
 		var loc = [];

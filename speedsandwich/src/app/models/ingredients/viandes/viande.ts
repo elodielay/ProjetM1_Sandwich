@@ -34,4 +34,5 @@ export abstract class Viande implements IIngredient{
     toString():string{
         return this.libelle + " : " + this.getPrix()*this.getCount();
     };  
+
 }

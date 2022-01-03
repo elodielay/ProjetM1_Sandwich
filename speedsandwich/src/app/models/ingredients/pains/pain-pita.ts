@@ -8,4 +8,10 @@ export class PainPita extends Pain{
         this.count = 0;
         this.src = "image";
     }
+
+    copy():PainPita
+    {
+        const copy = new PainPita();
+        return copy;
+    }
 }
