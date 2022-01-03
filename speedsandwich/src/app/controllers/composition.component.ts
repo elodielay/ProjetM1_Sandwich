@@ -17,9 +17,8 @@ import { Boisson } from '../models/ingredients/boissons/boisson';
   templateUrl: '../views/composition.component.html',
   styleUrls: ['../stylesheets/composition.component.css']
 })
-export class CompositionComponent {
-
-
+export class CompositionComponent
+{
   menu!:Menu;
   clg_pains:Pain[];
   clg_viandes:Viande[];
@@ -68,5 +67,4 @@ export class CompositionComponent {
   {
     this.comp_model.setDrink(index);
   }
-
 }

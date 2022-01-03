@@ -6,10 +6,10 @@ describe('Ketchup', () => {
   });
 
   it('should cost 0.5', () => {
-    expect(new Ketchup().prix).toEqual(0.5);
+    expect(new Ketchup().price).toEqual(0.5);
   });
 
   it('should be named Ketchup', () => {
-    expect(new Ketchup().libelle).toEqual("Ketchup");
+    expect(new Ketchup().wording).toEqual("Ketchup");
   });
 });

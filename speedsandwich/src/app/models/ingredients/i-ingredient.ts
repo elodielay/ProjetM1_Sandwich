@@ -1,12 +1,14 @@
-export interface IIngredient {
-    getPrix():number;
-    toString():string;
+export interface IIngredient
+{
     getCount():number;
-    getLibelle():string;
     getImage():string;
+    getPrice():number;
+    getWording():string;
+    
+    setCount(n:number):void;
 
     incCount():void;
     decCount():void;
-    setCount(n:number):void;
-    
+
+    toString():string;
 }

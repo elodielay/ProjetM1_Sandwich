@@ -1,36 +1,46 @@
 import { IIngredient } from "../i-ingredient";
 
-export abstract class Fromage implements IIngredient{
-    prix : number = 0;
-    libelle : string = "";
-    count : number =0;
-    src : string = "";
-    constructor(){
+export abstract class Fromage implements IIngredient
+{
+    price:number = 0;
+    wording:string = "";
+    count:number = 0;
+    src:string = "";
+
+    constructor() {}
+
+    setCount(n:number):void
+    {
+        this.count = n;
     }
-    setCount(n : number):void{
-        this.count=n;
-    }
-    decCount(): void {
-        if(this.count>0){
+    decCount():void 
+    {
+        if (this.count>0) {
             this.count--;
         }   
     }
-    getPrix():number{
-        return this.prix;
+    getPrice():number
+    {
+        return this.price;
     }
-    getImage():string{
+    getImage():string
+    {
         return this.src;
     }
-    getCount():number{
+    getCount():number
+    {
         return this.count;
     }
-    getLibelle():string{
-        return this.libelle;
+    getWording():string
+    {
+        return this.wording;
     }
-    incCount(){
+    incCount():void
+    {
         this.count++;
     }
-    toString():string{
-        return this.libelle + " : " + this.getPrix()*this.getCount();
+    toString():string
+    {
+        return this.wording + " : " + this.getPrice()*this.getCount();
     };  
 }

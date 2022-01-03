@@ -6,10 +6,10 @@ describe('Mayonnaise', () => {
   });
 
   it('should cost 0.5', () => {
-    expect(new Mayonnaise().prix).toEqual(0.5);
+    expect(new Mayonnaise().price).toEqual(0.5);
   });
 
   it('should be named Mayonnaise', () => {
-    expect(new Mayonnaise().libelle).toEqual("Mayonnaise");
+    expect(new Mayonnaise().wording).toEqual("Mayonnaise");
   });
 });

@@ -1,38 +1,46 @@
 import { IIngredient } from "../i-ingredient";
 
 export abstract class Viande implements IIngredient{
-    prix : number = 0;
-    libelle : string = "";
-    count : number =0;
-    src : string = "";
+    price:number = 0;
+    wording:string = "";
+    count:number =0;
+    src:string = "";
    
-    constructor(){
+    constructor() {}
+
+    setCount(n:number):void
+    {
+        this.count = n;
     }
-    setCount(n :number):void{
-        this.count=n;
-    }
-    decCount(): void {
+    decCount():void
+    {
         if(this.count>0){
             this.count--;
         }   
     }
-    getImage():string{
+    getImage():string
+    {
         return this.src;
     }
-    getPrix():number{
-        return this.prix;
+    getPrice():number
+    {
+        return this.price;
     }
-    getCount():number{
+    getCount():number
+    {
         return this.count;
     }
-    getLibelle():string{
-        return this.libelle;
+    getWording():string
+    {
+        return this.wording;
     }
-    incCount(){
+    incCount():void
+    {
         this.count++;
     }
-    toString():string{
-        return this.libelle + " : " + this.getPrix()*this.getCount();
+    toString():string
+    {
+        return this.wording + " : " + this.getPrice()*this.getCount();
     };  
 
 }

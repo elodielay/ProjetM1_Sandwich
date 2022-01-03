@@ -4,10 +4,10 @@
         <img class="img-fluid" style="max-height: 150px;" [src]="sandwich.image" alt="#" />
         <ul>
             <li *ngFor="let ing of sandwich.ingredients;">
-                {{ ing.getLibelle() }}
+                {{ ing.getWording() }}
             </li>
         </ul>
-        <button routerLink="/panier" routerLinkActive="active" class="bouton-acheter" (click)="onAjoute()">Ajouter au panier</button>
+        <button routerLink="/panier" routerLinkActive="active" class="bouton-acheter" (click)="onAdd()">Ajouter au panier</button>
         <button routerLink="/compose" routerLinkActive="active" class="bouton-acheter" (click)="onCreateMenu()">Créer mon menu</button>
     </div>
 </div>
