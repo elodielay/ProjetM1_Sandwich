@@ -23,7 +23,7 @@ export class Sandwich {
     getPrix():number{
       let prix : number = 0;
       this.ingredients!.forEach(element => {
-        prix += element.getPrix()
+        prix += element.getPrice()
       });
       return prix;
     }

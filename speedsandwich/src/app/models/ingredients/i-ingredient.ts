@@ -1,8 +1,8 @@
 export interface IIngredient {
-    getPrix():number;
+    getPrice():number;
     toString():string;
     getCount():number;
-    getLibelle():string;
+    getWording():string;
     getImage():string;
 
     incCount():void;
