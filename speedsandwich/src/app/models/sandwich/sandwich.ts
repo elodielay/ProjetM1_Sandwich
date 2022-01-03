@@ -14,7 +14,7 @@ export class Sandwich
 
     getSupplements():IIngredient[]
     {
-      return this.ingredients.slice();
+      return this.supplement.slice();
     }
 
     constructor(id:number, name:string, image:string, baseIng: String[])
@@ -33,9 +33,9 @@ export class Sandwich
 
 
     getPrice():number{
-      let prix : number = 0;
+      let price : number = 0;
       this.supplement!.forEach(element => {
-        prix += element.getPrice()
+        price += element.getPrice()
       });
       return price;
     }
