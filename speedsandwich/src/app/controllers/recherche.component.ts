@@ -31,25 +31,23 @@ export class RechercheComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // Méthode qui affiche les données après clique sur la bouton de recherche 
   onSearch() {
 
-    this.sandwiches.splice(0, this.sandwiches.length); 
+    this.sandwiches.splice(0, this.sandwiches.length);
     
-    this.recherche_model.fetchListeSandwich(this.ing); // fetch les sandwichs qui correspondent au mot clé recherché
+    this.recherche_model.fetchListeSandwich(this.ing);
 
     for(let i=0; i < this.recherche_model.getSandwichData().length; i++){
       this.hiddenData = true;
-      this.sandwiches.push(this.recherche_model.getSandwichData()[i]); // push les sandwichs resultant de la recherche vers la vue 
+      this.sandwiches.push(this.recherche_model.getSandwichData()[i]);
     }
 
-    this.recherche_model.viderListeData(); 
+    this.recherche_model.viderListeData();
 
     
     
 	}
 
-  // Méthode pour ajouter un sandwich resultant de la recherche au panier après clique sur le bouton ajouter au panier
   onAjoute(index:number):void
   {
     this.rechercheModel.setSelected(index);

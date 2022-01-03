@@ -9,10 +9,4 @@ export class PainBaguette extends Pain{
         this.src = "image";
 
     }
-
-    copy():PainBaguette
-    {
-        const copy = new PainBaguette();
-        return copy;
-    }
 }

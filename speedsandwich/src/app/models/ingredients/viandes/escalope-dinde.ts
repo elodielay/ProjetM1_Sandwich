@@ -10,11 +10,4 @@ export class EscalopeDinde extends Viande{
 
     }
 
-    copy():EscalopeDinde
-    {
-        const copy = new EscalopeDinde();
-        return copy;
-    }
-
-
 }

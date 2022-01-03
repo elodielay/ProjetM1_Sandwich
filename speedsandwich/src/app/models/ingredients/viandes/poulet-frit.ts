@@ -10,11 +10,4 @@ export class PouletFrit extends Viande{
         this.src = "image";
 
     }
-
-    copy():PouletFrit
-    {
-        const copy = new PouletFrit();
-        return copy;
-    }
-
 }

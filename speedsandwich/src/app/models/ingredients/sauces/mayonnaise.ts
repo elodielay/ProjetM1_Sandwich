@@ -8,10 +8,4 @@ export class Mayonnaise extends Sauce{
         this.count = 0;
         this.src = "https://www.marciatack.fr/wp-content/uploads/2020/11/Mayonnaise-maison.jpg";
     }
-
-    copy():Mayonnaise
-    {
-        const copy = new Mayonnaise();
-        return copy;
-    }
 }

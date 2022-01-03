@@ -32,6 +32,4 @@ export abstract class Supplements implements IIngredient {
     toString():string{
         return this.wording + " : " + this.getPrice()*this.getCount();
     };
-
-    
 }

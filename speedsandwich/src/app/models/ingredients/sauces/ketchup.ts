@@ -8,10 +8,4 @@ export class Ketchup extends Sauce{
         this.count = 0;
         this.src = "https://cdn.pixabay.com/photo/2014/05/28/12/26/ketchup-356439_1280.jpg";
     }
-
-    copy():Ketchup
-    {
-        const copy = new Ketchup();
-        return copy;
-    }
 }
