@@ -7,7 +7,7 @@
         <div class="box-loop" *ngFor="let sauce of clg_sauces; let i = index">
           <div class="box-content-ele">
             <div class="box-content-img-label" (click)="onSelectSauce(i)">
-              {{ sauce.getWording() }}
+              {{ sauce.getLibelle() }}
             </div>
               <div class="box-content-img" (click)="onSelectSauce(i)">              
                 <img [src]="sauce.src" width="200" height="200" class="image">
@@ -24,7 +24,7 @@
         <div class="box-loop" *ngFor="let drink of clg_boissons; let i = index">
           <div class="box-content-ele">
             <div class="box-content-img-label" (click)="onSelectDrink(i)">
-              {{ drink.getWording() }}
+              {{ drink.getLibelle() }}
             </div>
               <div class="box-content-img" (click)="onSelectDrink(i)">              
                 <img [src]="drink.src" width="200" height="200" class="image">
@@ -43,7 +43,7 @@
         <div class="box-loop" *ngFor="let ing of clg_supplements; let i = index">
           <div class="box-content-ele">
             <div class="box-content-img-label" (click)="onSelectAccompaniement(i)">
-              {{ ing.getWording() }}
+              {{ ing.getLibelle() }}
             </div>
               <div class="box-content-img" (click)="onSelectAccompaniement(i)">              
                 <img [src]="ing.src" width="200" height="200" class="image">

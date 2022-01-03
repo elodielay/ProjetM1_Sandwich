@@ -1,8 +1,8 @@
 import { IIngredient } from "../i-ingredient";
 
 export abstract class Supplements implements IIngredient {
-    prix : number = 0;
-    libelle : string = "";
+    price : number = 0;
+    wording : string = "";
     count : number =1;
     src : string = "";
 
@@ -17,20 +17,20 @@ export abstract class Supplements implements IIngredient {
     getImage():string{
         return this.src;
     }
-    getPrix():number{
-        return this.prix;
+    getPrice():number{
+        return this.price;
     }
     getCount():number{
         return this.count;
     }
-    getLibelle():string{
-        return this.libelle;
+    getWording():string{
+        return this.wording;
     }
     incCount(){
         this.count= 1;
     }
     toString():string{
-        return this.libelle + " : " + this.getPrix()*this.getCount();
+        return this.wording + " : " + this.getPrice()*this.getCount();
     };
 
     

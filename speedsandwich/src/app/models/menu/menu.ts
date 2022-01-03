@@ -14,12 +14,12 @@ export class Menu
 	private drink!:Boisson;
 	image!:string;
 
-	getPrice():number
+	getPrix():number
 	{
-		let price = this.sandwich.getPrice();
-		price += this.accompaniement!.getPrice();
-		price += this.drink!.getPrice();
-		return price;
+		let prix = this.sandwich.getPrix();
+		prix += this.accompaniement!.price;
+		prix += this.drink!.price;
+		return prix;
 	}
 
 	setName(name:string)
@@ -68,7 +68,6 @@ export class Menu
 		copy.setDrink(this.drink);
 		return copy;
 	}
-
 	toString():string{
         var final : string = "";
         final+= "\n" + this.name  +' : pour le prix de ';

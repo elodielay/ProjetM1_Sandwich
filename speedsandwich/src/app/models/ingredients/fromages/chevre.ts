@@ -1,9 +1,7 @@
 import { Fromage } from "./fromage";
 
-export class Chevre extends Fromage
-{
-    constructor()
-    {
+export class Chevre extends Fromage{
+    constructor(){
         super();
         this.wording = "Chevre"
         this.price = 0.5;

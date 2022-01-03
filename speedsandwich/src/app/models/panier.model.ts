@@ -20,13 +20,13 @@ export class PanierModel
 		}
 		return taille;
 	}
-	getTotalPrice():number
+	getPrixTotal():number
 	{
-		let total_price:number = 0;
+		let prix_total:number = 0;
 		for (let item of this.articles) {
-			total_price += item[0].getPrice() * item[1];
+			prix_total += item[0].getPrix() * item[1];
 		}
-		return total_price;
+		return prix_total;
 	}
 
 	addItem(item:any):void

@@ -6,10 +6,10 @@ describe('Frite', () => {
   });
 
   it('should cost 0.5', () => {
-    expect(new Frite().price).toEqual(0.5);
+    expect(new Frite().prix).toEqual(0.5);
   });
 
   it('should be named Frites', () => {
-    expect(new Frite().wording).toEqual("Frites");
+    expect(new Frite().libelle).toEqual("Frites");
   });
 });

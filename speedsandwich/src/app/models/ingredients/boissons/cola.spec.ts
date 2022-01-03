@@ -6,10 +6,10 @@ describe('Cola', () => {
   });
 
   it('should cost 0.5', () => {
-    expect(new Cola().price).toEqual(0.5);
+    expect(new Cola().prix).toEqual(0.5);
   });
 
   it('should be named Cola', () => {
-    expect(new Cola().wording).toEqual("Cola");
+    expect(new Cola().libelle).toEqual("Cola");
   });
 });

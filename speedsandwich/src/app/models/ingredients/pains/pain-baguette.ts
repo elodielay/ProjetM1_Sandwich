@@ -1,9 +1,7 @@
 import { Pain } from "./pain";
 
-export class PainBaguette extends Pain
-{
-    constructor()
-    {
+export class PainBaguette extends Pain{
+    constructor(){
         super();
         this.price = 0.7;
         this.wording = "Baguette";

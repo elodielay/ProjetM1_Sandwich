@@ -4,7 +4,7 @@
         <img [src]="sandwich.image" width="130" height="130">
         <div class="nom-prix">
             <p class="nom-sandwich">{{sandwich.name}}</p>
-            <p class="prix-sandwich">{{sandwich.getPrice()}} €</p>
+            <p class="prix-sandwich">{{sandwich.getPrix()}} €</p>
         </div>
         <button class="bouton-sandwich" (click)="onSelect(i)">Details</button>
     </div>

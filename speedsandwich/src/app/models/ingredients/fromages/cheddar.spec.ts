@@ -6,10 +6,10 @@ describe('Cheddar', () => {
   });
 
   it('should cost 0.5', () => {
-    expect(new Cheddar().price).toEqual(0.5);
+    expect(new Cheddar().prix).toEqual(0.5);
   });
 
   it('should be named Cheddar', () => {
-    expect(new Cheddar().wording).toEqual("Cheddar");
+    expect(new Cheddar().libelle).toEqual("Cheddar");
   });
 });

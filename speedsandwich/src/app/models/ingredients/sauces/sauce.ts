@@ -1,44 +1,35 @@
 import { IIngredient } from "../i-ingredient";
 
-export abstract class Sauce implements IIngredient
-{
-    price:number = 0;
-    wording:string = "";
-    count:number =1;
-    src:string = "";
+export abstract class Sauce implements IIngredient {
+    price : number = 0;
+    wording : string = "";
+    count : number =1;
+    src : string = "";
 
-    constructor() {}
-
-    setCount(n:number):void
-    {
-        this.count = n;
+    constructor(){
     }
-    decCount():void
-    {
-        this.count = 0;
+    setCount(n : number):void{
+        this.count=n;
     }
-    getImage():string
-    {
+    decCount(): void {
+        this.count=0;
+    }
+    getImage():string{
         return this.src;
     }
-    getPrice():number
-    {
+    getPrice():number{
         return this.price;
     }
-    getCount():number
-    {
+    getCount():number{
         return this.count;
     }
-    getWording():string
-    {
+    getWording():string{
         return this.wording;
     }
-    incCount():void
-    {
-        this.count = 1;
+    incCount(){
+        this.count= 1;
     }
-    toString():string
-    {
+    toString():string{
         return this.wording + " : " + this.getPrice()*this.getCount();
     };
 }
