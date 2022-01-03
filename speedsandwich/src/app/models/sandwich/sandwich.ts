@@ -7,7 +7,11 @@ export class Sandwich {
     image:string;
     ingredients:IIngredient[];
 
-    
+    getSupplements():IIngredient[]
+    {
+      return this.ingredients.slice();
+    }
+
     constructor(id:number, name:string, image:string){
       this.id = id;
       this.name = name;
