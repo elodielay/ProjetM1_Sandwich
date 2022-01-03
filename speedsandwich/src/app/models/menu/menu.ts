@@ -2,6 +2,7 @@ import { Sandwich } from '../sandwich/sandwich';
 import { Boisson } from '../ingredients/boissons/boisson';
 import { Sauce } from '../ingredients/sauces/sauce';
 import { Supplements } from '../ingredients/supplements/supplements';
+import { IIngredient } from '../ingredients/i-ingredient';
 
 export class Menu
 {
@@ -20,6 +21,22 @@ export class Menu
 		prix += this.accompaniement!.price;
 		prix += this.drink!.price;
 		return prix;
+	}
+	getSauce():Sauce
+	{
+		return this.sauce;
+	}
+	getDrink():Boisson
+	{
+		return this.drink;
+	}
+	getAccompaniement():Supplements
+	{
+		return this.accompaniement;
+	}
+	getSupplements():IIngredient[]
+	{
+		return this.sandwich.getSupplements();
 	}
 
 	setName(name:string)
