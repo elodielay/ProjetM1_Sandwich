@@ -1,6 +1,6 @@
-import { Fromage } from "./fromage";
+import { Cheese } from "./cheese";
 
-export class Emmental extends Fromage
+export class Emmental extends Cheese
 {
     constructor()
     {

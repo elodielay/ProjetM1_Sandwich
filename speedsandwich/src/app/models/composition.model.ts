@@ -11,10 +11,10 @@ import { EscalopeDinde } from './ingredients/viandes/escalope-dinde';
 import { PouletFrit } from './ingredients/viandes/poulet-frit';
 import { SteackHache } from './ingredients/viandes/steack-hache';
 
-import { Fromage } from './ingredients/fromages/fromage';
-import { Cheddar } from './ingredients/fromages/cheddar';
-import { Chevre } from './ingredients/fromages/chevre';
-import { Emmental } from './ingredients/fromages/emmental';
+import { Cheese } from './ingredients/cheeses/cheese';
+import { Cheddar } from './ingredients/cheeses/cheddar';
+import { Chevre } from './ingredients/cheeses/chevre';
+import { Emmental } from './ingredients/cheeses/emmental';
 
 import { Sauce } from './ingredients/sauces/sauce';
 import { Ketchup } from './ingredients/sauces/ketchup';
@@ -46,7 +46,7 @@ export class CompositionModel
 		new PouletFrit(),
 		new SteackHache()
 	];
-	private clg_fromages:Fromage[] = [
+	private clg_fromages:Cheese[] = [
 		new Cheddar(),
 		new Chevre(),
 		new Emmental()
@@ -74,7 +74,7 @@ export class CompositionModel
 	{
 		return this.clg_viandes;
 	}
-	getClgFromages():Fromage[]
+	getClgCheeses():Cheese[]
 	{
 		return this.clg_fromages;
 	}
