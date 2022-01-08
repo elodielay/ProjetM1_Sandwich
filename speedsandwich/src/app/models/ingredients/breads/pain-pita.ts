@@ -1,6 +1,6 @@
-import { Pain } from "./pain";
+import { Bread } from "./bread";
 
-export class PainPita extends Pain
+export class PainPita extends Bread
 {
     constructor()
     {

@@ -1,6 +1,6 @@
 import { IIngredient } from "../i-ingredient";
 
-export abstract class Pain implements IIngredient
+export abstract class Bread implements IIngredient
 {
     price : number = 0;
     wording : string = "";

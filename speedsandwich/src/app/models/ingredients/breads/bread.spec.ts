@@ -1,12 +1,12 @@
-import { Pain } from './pain';
+import { Bread } from './bread';
 
-class TestPain extends Pain{
+class TestBread extends Bread{
   constructor() {
     super();
   }
 }
 
-describe('Pain', () => {
+describe('Bread', () => {
   it('should create an instance', () => {
     expect(new TestPain()).toBeTruthy();
   });

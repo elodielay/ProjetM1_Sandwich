@@ -2,9 +2,9 @@ import { Observable, Subject } from 'rxjs';
 import { Sandwich } from './sandwich/sandwich';
 import { Menu } from './menu/menu';
 
-import { Pain } from './ingredients/pains/pain';
-import { PainBaguette } from './ingredients/pains/pain-baguette';
-import { PainPita } from './ingredients/pains/pain-pita';
+import { Bread } from './ingredients/breads/bread';
+import { PainBaguette } from './ingredients/breads/pain-baguette';
+import { PainPita } from './ingredients/breads/pain-pita';
 
 import { Viande } from './ingredients/viandes/viande';
 import { EscalopeDinde } from './ingredients/viandes/escalope-dinde';
@@ -37,7 +37,7 @@ export class CompositionModel
 	private menu!:Menu;
 	private created:number;
 
-	private clg_pains:Pain[] = [
+	private clg_pains:Bread[] = [
 		new PainBaguette(),
 		new PainPita()
 	];
@@ -66,7 +66,7 @@ export class CompositionModel
 		new SodaOrange()
 	];
 
-	getClgPains():Pain[]
+	getClgBreads():Bread[]
 	{
 		return this.clg_pains;
 	}

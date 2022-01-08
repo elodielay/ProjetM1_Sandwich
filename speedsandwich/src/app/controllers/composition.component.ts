@@ -5,7 +5,7 @@ import { CompositionModel } from '../models/composition.model';
 import { PanierModel } from '../models/panier.model';
 
 import { Menu } from '../models/menu/menu';
-import { Pain } from '../models/ingredients/pains/pain';
+import { Bread } from '../models/ingredients/breads/bread';
 import { Viande } from '../models/ingredients/viandes/viande';
 import { Cheese } from '../models/ingredients/cheeses/cheese';
 import { Sauce } from '../models/ingredients/sauces/sauce';
@@ -22,7 +22,7 @@ export class CompositionComponent
 {
 
   menu!:Menu;
-  clg_pains:Pain[];
+  clg_pains:Bread[];
   clg_viandes:Viande[];
   clg_cheeses:Cheese[];
   clg_sauces:Sauce[];
@@ -31,7 +31,7 @@ export class CompositionComponent
 
   constructor(private comp_model:CompositionModel, private panier_model:PanierModel)
   {
-    this.clg_pains = this.comp_model.getClgPains();
+    this.clg_pains = this.comp_model.getClgBreads();
     this.clg_viandes = this.comp_model.getClgViandes();
     this.clg_cheeses = this.comp_model.getClgCheeses();
     this.clg_sauces = this.comp_model.getClgSauces();
