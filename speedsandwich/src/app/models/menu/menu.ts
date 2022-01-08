@@ -1,5 +1,5 @@
 import { Sandwich } from '../sandwich/sandwich';
-import { Boisson } from '../ingredients/boissons/boisson';
+import { Drink } from '../ingredients/drinks/drink';
 import { Sauce } from '../ingredients/sauces/sauce';
 import { Supplements } from '../ingredients/supplements/supplements';
 import { IIngredient } from '../ingredients/i-ingredient';
@@ -12,7 +12,7 @@ export class Menu
 	private sandwich!:Sandwich;
 	private sauce!:Sauce;
 	private accompaniement!:Supplements;
-	private drink!:Boisson;
+	private drink!:Drink;
 	image!:string;
 
 	getPrice():number
@@ -26,7 +26,7 @@ export class Menu
 	{
 		return this.sauce;
 	}
-	getDrink():Boisson
+	getDrink():Drink
 	{
 		return this.drink;
 	}
@@ -58,7 +58,7 @@ export class Menu
 	{
 		this.accompaniement = accompaniement;
 	}
-	setDrink(drink:Boisson):void
+	setDrink(drink:Drink):void
 	{
 		this.drink = drink;
 	}

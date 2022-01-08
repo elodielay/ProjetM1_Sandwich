@@ -1,7 +1,7 @@
-import { Boisson } from "./boisson";
+import { Drink } from "./drink";
 
 
-export class SodaOrange extends Boisson{
+export class SodaOrange extends Drink{
     constructor(){
         super();
         this.price = 0.5;

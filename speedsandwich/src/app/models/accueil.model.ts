@@ -2,19 +2,24 @@ import { Sandwich } from './sandwich/sandwich';
 import { Observable, Subject } from 'rxjs';
 import SandwichJson from '../../assets/sandwich.json';
 import { plainToClass, plainToInstance, Type } from 'class-transformer';
+
+import { IIngredient } from './ingredients/i-ingredient';
+import { IngredientsComponent } from '../controllers/ingredients.component';
+
 import { PainBaguette } from './ingredients/breads/pain-baguette';
-import { SteackHache } from './ingredients/viandes/steack-hache';
-import { Ketchup } from './ingredients/sauces/ketchup';
-import { Cheddar } from './ingredients/cheeses/cheddar';
-import { PouletFrit } from './ingredients/viandes/poulet-frit';
-import { Mayonnaise } from './ingredients/sauces/mayonnaise';
 import { PainPita } from './ingredients/breads/pain-pita';
+
+import { SteackHache } from './ingredients/viandes/steack-hache';
+import { PouletFrit } from './ingredients/viandes/poulet-frit';
+import { EscalopeDinde } from './ingredients/viandes/escalope-dinde';
+
+import { Ketchup } from './ingredients/sauces/ketchup';
+import { Mayonnaise } from './ingredients/sauces/mayonnaise';
 import { Moutarde } from './ingredients/sauces/moutarde';
+
+import { Cheddar } from './ingredients/cheeses/cheddar';
 import { Emmental } from './ingredients/cheeses/emmental';
 import { Chevre } from './ingredients/cheeses/chevre';
-import { EscalopeDinde } from './ingredients/viandes/escalope-dinde';
-import { IngredientsComponent } from '../controllers/ingredients.component';
-import { IIngredient } from './ingredients/i-ingredient';
 
 export class AccueilModel
 {

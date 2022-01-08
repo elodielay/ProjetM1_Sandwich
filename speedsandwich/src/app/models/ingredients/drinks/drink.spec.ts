@@ -1,12 +1,12 @@
-import { Boisson } from './boisson';
+import { Drink } from './drink';
 
-class TestBoisson extends Boisson{
+class TestDrink extends Drink{
   constructor() {
     super();
   }
 }
 
-describe('Boisson', () => {
+describe('Drink', () => {
   it('should create an instance', () => {
     expect(new TestBoisson()).toBeTruthy();
   });

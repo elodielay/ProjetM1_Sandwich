@@ -10,7 +10,7 @@ import { Viande } from '../models/ingredients/viandes/viande';
 import { Cheese } from '../models/ingredients/cheeses/cheese';
 import { Sauce } from '../models/ingredients/sauces/sauce';
 import { Supplements } from '../models/ingredients/supplements/supplements';
-import { Boisson } from '../models/ingredients/boissons/boisson';
+import { Drink } from '../models/ingredients/drinks/drink';
 
 @Component({
   selector: 'app-composition',
@@ -27,7 +27,7 @@ export class CompositionComponent
   clg_cheeses:Cheese[];
   clg_sauces:Sauce[];
   clg_supplements:Supplements[];
-  clg_boissons:Boisson[];
+  clg_drinks:Drink[];
 
   constructor(private comp_model:CompositionModel, private panier_model:PanierModel)
   {
@@ -36,7 +36,7 @@ export class CompositionComponent
     this.clg_cheeses = this.comp_model.getClgCheeses();
     this.clg_sauces = this.comp_model.getClgSauces();
     this.clg_supplements = this.comp_model.getClgSupplements();
-    this.clg_boissons = this.comp_model.getClgBoissons();
+    this.clg_drinks = this.comp_model.getClgDrinks();
     this.comp_model.comp_subject.subscribe(
       (menu:Menu) => {
         this.menu = menu;

@@ -25,10 +25,10 @@ import { Supplements } from './ingredients/supplements/supplements';
 import { Frite } from './ingredients/supplements/frite';
 import { Potatoes } from './ingredients/supplements/potatoes';
 
-import { Boisson } from './ingredients/boissons/boisson';
-import { Cola } from './ingredients/boissons/cola';
-import { Eau } from './ingredients/boissons/eau';
-import { SodaOrange } from './ingredients/boissons/soda-orange';
+import { Drink } from './ingredients/drinks/drink';
+import { Cola } from './ingredients/drinks/cola';
+import { Eau } from './ingredients/drinks/eau';
+import { SodaOrange } from './ingredients/drinks/soda-orange';
 
 export class CompositionModel
 {
@@ -60,7 +60,7 @@ export class CompositionModel
 		new Frite(),
 		new Potatoes()
 	];
-	private clg_boissons:Boisson[] = [
+	private clg_drinks:Drink[] = [
 		new Cola(),
 		new Eau(),
 		new SodaOrange()
@@ -86,9 +86,9 @@ export class CompositionModel
 	{
 		return this.clg_supplements;
 	}
-	getClgBoissons():Boisson[]
+	getClgDrinks():Drink[]
 	{
-		return this.clg_boissons;
+		return this.clg_drinks;
 	}
 
 	setSandwich(sandwich:Sandwich):void
@@ -121,7 +121,7 @@ export class CompositionModel
 	}
 	setDrink(index:number):void
 	{
-		const drink = this.clg_boissons[index];
+		const drink = this.clg_drinks[index];
 		this.menu.setDrink(drink);
 		this.emitMenu();
 	}
