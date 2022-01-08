@@ -105,7 +105,7 @@
           routerLinkActive="active"
           *ngIf="menu.complete()" (click)="onAddToPanier()"
         >
-          Ajouter sandwich
+          Ajouter au panier
         </button>
         <button routerLink="" routerLinkActive="active" (click)="onQuitCompo()">Annuler la création</button>
         <p *ngIf="!menu.complete()">Composez votre menu pour l'ajouter au panier</p>
