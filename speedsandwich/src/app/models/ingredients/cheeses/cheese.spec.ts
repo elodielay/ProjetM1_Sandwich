@@ -1,4 +1,4 @@
-import { Fromage } from './fromage';
+import { Cheese } from './cheese';
 
 class TestFromage extends Fromage{
   constructor() {
