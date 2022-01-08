@@ -41,22 +41,28 @@
         </div>
       </div>
 
-      <!--<div class="box">
-        <div class="box-header"><h3>Nos fromages</h3></div>
+      <div class="box">
+        <div class="box-header">
+          <h3>Nos fromages</h3>
+        </div>
         <div class="box-content">
-          <div class="box-loop" *ngFor="let ing of catalogueFromage; let index = index">
+          <div class="box-loop" *ngFor="let cheese of clg_cheeses; let i=index">
             <div class="box-content-ele">
-              <div class="box-content-img-label">{{ ing.getWording() }} au prix de {{ ing.getPrice() }}€ l'unité</div>
-              <div class="box-content-img"><img [src]="ing.getImage()" width="200" height="200" class="image"></div>
+              <div class="box-content-img-label">
+                {{ cheese.getWording() }} au prix de {{ cheese.getPrice() }}€ l'unité
+              </div>
+              <div class="box-content-img">
+                <img [src]="cheese.getImage()" width="200" height="200" class="image">
+              </div>
               <div class="quantite">
-                <button (click)="remove(ing)">-</button>
-                {{ ing.getCount() }}
-                <button (click)="add(ing)">+</button>
+                <button (click)="onRemoveCheese(i)">-</button>
+                {{ cheese.getCount() }}
+                <button (click)="onAddCheese(i)">+</button>
               </div>
             </div>
           </div>
         </div>
-      </div>-->
+      </div>
 
       <div class="box">
         <div class="box-header"><h3>Nos sauces</h3></div>
@@ -92,8 +98,6 @@
         </div>
       </div>
 
-      <!--</div>-->
-
       <div class="box">
         <div class="box-header"><h3>Nos suppléments</h3></div>
       <div class="box-content">
@@ -122,7 +126,6 @@
         <p *ngIf="!menu.complete()">Composez votre menu pour l'ajouter au panier</p>
       </div>
 
-      <!--</div>-->
   </div>
 
   <div class="catalogue-recap">

@@ -47,7 +47,7 @@ export class CompositionComponent
 
   onQuitCompo():void
   {
-    this.comp_model.initCatalogs();
+    this.comp_model.resetSupplements();
     this.comp_model.initDefault("");
   }
   onAddToPanier():void
@@ -55,9 +55,7 @@ export class CompositionComponent
     var element = (<HTMLInputElement>document.getElementById("nameMenu")).value;
     this.comp_model.setName(element);
     this.panier_model.addItem(this.menu.copy());
-    this.comp_model.initDefault(element);
-    this.comp_model.initCatalogs();
-    console.log(this.panier_model.articles);
+    this.onQuitCompo();
   }
 
   onSelectBread(index:number):void
@@ -81,9 +79,17 @@ export class CompositionComponent
   {
     this.comp_model.addMeat(index);
   }
+  onAddCheese(index:number):void
+  {
+    this.comp_model.addCheese(index);
+  }
 
   onRemoveMeat(index:number):void
   {
     this.comp_model.removeMeat(index);
+  }
+  onRemoveCheese(index:number):void
+  {
+    this.comp_model.removeCheese(index);
   }
 }

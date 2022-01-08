@@ -36,13 +36,34 @@ export class CompositionModel
 
 	private menu!:Menu;
 	private created:number;
-
-	private clg_breads:Bread[] = [];
-	private clg_meats:Meat[] = [];
-	private clg_cheeses:Cheese[] = [];
-	private clg_sauces:Sauce[] = [];
-	private clg_accompaniments:Accompaniment[] = [];
-	private clg_drinks:Drink[] = [];
+	private clg_breads = [
+		new PainPita(),
+		new PainBaguette()
+	];
+	private clg_meats = [
+		new PouletFrit(),
+		new SteackHache(),
+		new EscalopeDinde()
+	];
+	private clg_cheeses = [
+		new Chevre(),
+		new Cheddar(),
+		new Emmental()
+	];
+	private clg_sauces = [
+		new Ketchup(),
+		new Moutarde(),
+		new Mayonnaise()
+	];
+	private clg_accompaniments = [
+		new Frite(),
+		new Potatoes()
+	];
+	private clg_drinks = [
+		new Eau(),
+		new Cola(),
+		new SodaOrange()
+	];
 
 	getClgBreads():Bread[]
 	{
@@ -114,7 +135,6 @@ export class CompositionModel
 	{
 		this.created = 0;
 		this.initDefault("");
-		this.initCatalogs();
 	}
 
 	addMeat(index:number):void
@@ -154,7 +174,15 @@ export class CompositionModel
 	}
 	removeCheese(index:number):void
 	{
-		//
+		const cheese = this.clg_cheeses[index];
+		if (cheese.getCount()>0) {
+			cheese.decCount();
+			if (cheese.getCount()==0) {
+				const sandwich = this.menu.getSandwich();
+				sandwich.removeSupplement(cheese);
+			}
+			this.emitMenu();
+		}
 	}
 
 	initDefault(menu:string):void
@@ -163,35 +191,12 @@ export class CompositionModel
 		this.menu = new Menu(name);
 		this.emitMenu();
 	}
-	initCatalogs():void
+	resetSupplements():void
 	{
-		this.clg_breads = [];
-		this.clg_breads.push(new PainPita());
-		this.clg_breads.push(new PainBaguette());
-
-		this.clg_meats = [];
-		this.clg_meats.push(new PouletFrit());
-		this.clg_meats.push(new SteackHache());
-		this.clg_meats.push(new EscalopeDinde());
-
-		this.clg_cheeses = [];
-		this.clg_cheeses.push(new Chevre());
-		this.clg_cheeses.push(new Cheddar());
-		this.clg_cheeses.push(new Emmental());
-
-		this.clg_sauces = [];
-		this.clg_sauces.push(new Ketchup());
-		this.clg_sauces.push(new Moutarde());
-		this.clg_sauces.push(new Mayonnaise());
-
-		this.clg_accompaniments = [];
-		this.clg_accompaniments.push(new Frite());
-		this.clg_accompaniments.push(new Potatoes());
-
-		this.clg_drinks = [];
-		this.clg_drinks.push(new Eau());
-		this.clg_drinks.push(new Cola());
-		this.clg_drinks.push(new SodaOrange());
+		const sandwich = this.menu.getSandwich();
+		sandwich.getSupplements().forEach(element => {
+			element.setCount(0);
+		});
 	}
 
 	emitMenu():void
