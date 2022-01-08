@@ -6,10 +6,10 @@ import { Bread } from './ingredients/breads/bread';
 import { PainBaguette } from './ingredients/breads/pain-baguette';
 import { PainPita } from './ingredients/breads/pain-pita';
 
-import { Viande } from './ingredients/viandes/viande';
-import { EscalopeDinde } from './ingredients/viandes/escalope-dinde';
-import { PouletFrit } from './ingredients/viandes/poulet-frit';
-import { SteackHache } from './ingredients/viandes/steack-hache';
+import { Meat } from './ingredients/meats/meat';
+import { EscalopeDinde } from './ingredients/meats/escalope-dinde';
+import { PouletFrit } from './ingredients/meats/poulet-frit';
+import { SteackHache } from './ingredients/meats/steack-hache';
 
 import { Cheese } from './ingredients/cheeses/cheese';
 import { Cheddar } from './ingredients/cheeses/cheddar';
@@ -41,7 +41,7 @@ export class CompositionModel
 		new PainBaguette(),
 		new PainPita()
 	];
-	private clg_viandes:Viande[] = [
+	private clg_Meats:Meat[] = [
 		new EscalopeDinde(),
 		new PouletFrit(),
 		new SteackHache()
@@ -70,9 +70,9 @@ export class CompositionModel
 	{
 		return this.clg_pains;
 	}
-	getClgViandes():Viande[]
+	getClgMeats():Meat[]
 	{
-		return this.clg_viandes;
+		return this.clg_Meats;
 	}
 	getClgCheeses():Cheese[]
 	{

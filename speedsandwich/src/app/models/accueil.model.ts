@@ -9,9 +9,9 @@ import { IngredientsComponent } from '../controllers/ingredients.component';
 import { PainBaguette } from './ingredients/breads/pain-baguette';
 import { PainPita } from './ingredients/breads/pain-pita';
 
-import { SteackHache } from './ingredients/viandes/steack-hache';
-import { PouletFrit } from './ingredients/viandes/poulet-frit';
-import { EscalopeDinde } from './ingredients/viandes/escalope-dinde';
+import { SteackHache } from './ingredients/meats/steack-hache';
+import { PouletFrit } from './ingredients/meats/poulet-frit';
+import { EscalopeDinde } from './ingredients/meats/escalope-dinde';
 
 import { Ketchup } from './ingredients/sauces/ketchup';
 import { Mayonnaise } from './ingredients/sauces/mayonnaise';

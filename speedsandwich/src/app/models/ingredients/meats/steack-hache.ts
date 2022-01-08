@@ -1,6 +1,6 @@
-import { Viande } from "./viande";
+import { Meat } from "./meat";
 
-export class SteackHache extends Viande
+export class SteackHache extends Meat
 {
     constructor()
     {

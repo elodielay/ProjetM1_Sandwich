@@ -6,7 +6,7 @@ import { PanierModel } from '../models/panier.model';
 
 import { Menu } from '../models/menu/menu';
 import { Bread } from '../models/ingredients/breads/bread';
-import { Viande } from '../models/ingredients/viandes/viande';
+import { Meat } from '../models/ingredients/meats/meat';
 import { Cheese } from '../models/ingredients/cheeses/cheese';
 import { Sauce } from '../models/ingredients/sauces/sauce';
 import { Supplements } from '../models/ingredients/supplements/supplements';
@@ -23,7 +23,7 @@ export class CompositionComponent
 
   menu!:Menu;
   clg_pains:Bread[];
-  clg_viandes:Viande[];
+  clg_meats:Meat[];
   clg_cheeses:Cheese[];
   clg_sauces:Sauce[];
   clg_supplements:Supplements[];
@@ -32,7 +32,7 @@ export class CompositionComponent
   constructor(private comp_model:CompositionModel, private panier_model:PanierModel)
   {
     this.clg_pains = this.comp_model.getClgBreads();
-    this.clg_viandes = this.comp_model.getClgViandes();
+    this.clg_meats = this.comp_model.getClgMeats();
     this.clg_cheeses = this.comp_model.getClgCheeses();
     this.clg_sauces = this.comp_model.getClgSauces();
     this.clg_supplements = this.comp_model.getClgSupplements();

@@ -1,6 +1,6 @@
-import { Viande } from "./viande";
+import { Meat } from "./meat";
 
-export class PouletFrit extends Viande
+export class PouletFrit extends Meat
 {
     //override prix : number = 0;
     constructor()
