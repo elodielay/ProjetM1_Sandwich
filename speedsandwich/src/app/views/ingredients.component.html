@@ -3,12 +3,12 @@
     <div *ngIf="sandwich" class="sandwich">
         <img class="img-fluid" style="max-height: 150px;" [src]="sandwich.image" alt="#" />
         <ul>
-            <li *ngFor="let sup of sandwich.supplement;">
-                {{ sup.getWording() }}
+            <li *ngFor="let supplement of sandwich.getSupplements();">
+                {{ supplement.getWording() }}
             </li>
 
-            <li *ngFor="let ing of sandwich.baseIng;">
-                {{ ing }}
+            <li *ngFor="let ingredient of sandwich.getIngredients();">
+                {{ ingredient }}
             </li>
         </ul>
         <button routerLink="/panier" routerLinkActive="active" class="bouton-acheter" (click)="onAdd()">Ajouter au panier</button>

@@ -19,8 +19,8 @@ export class RechercheModel
 		this.sandwiches = accueilMod.getSandwiches();
 
 		for(let i=0; i < this.sandwiches.length; i++){
-			let listeIng: IIngredient[] = this.sandwiches[i].supplement;
-			for(let y = 0; y < this.sandwiches[i].supplement?.length; y++){
+			let listeIng: IIngredient[] = this.sandwiches[i].getSupplements();
+			for(let y = 0; y < this.sandwiches[i].getSupplements()?.length; y++){
 				if(ing.toLowerCase() == listeIng[y].getWording().toLowerCase() || listeIng[y].getWording().toLowerCase().includes(ing.toLowerCase())){
 					this.sandwichsData?.push(this.sandwiches[i]);
 				}

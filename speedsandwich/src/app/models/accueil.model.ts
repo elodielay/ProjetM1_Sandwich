@@ -31,26 +31,6 @@ export class AccueilModel
 
 	public getSandwiches():Sandwich[]
 	{
-		this.sandwiches[0].supplement = [
-			new PainBaguette
-		];
-
-		this.sandwiches[1].supplement = [
-			new PainBaguette
-		];
-
-		this.sandwiches[2].supplement = [
-			new PainPita
-		];
-
-		this.sandwiches[3].supplement = [
-			new PainPita
-		];
-
-		this.sandwiches[4].supplement = [
-			new PainPita
-		];
-
 		console.log(this.sandwiches);
 
 		return this.sandwiches;
