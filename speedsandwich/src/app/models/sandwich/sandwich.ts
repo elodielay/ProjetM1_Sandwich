@@ -9,6 +9,7 @@ export class Sandwich
     name:string;
     bread?:Bread;
     image:string;
+    price:number;
     supplements:IIngredient[];
 
     @Type(() => String)
@@ -32,7 +33,7 @@ export class Sandwich
       this.bread = bread;
     }
 
-    constructor(id:number, name:string, image:string, ingredient: String[])
+    constructor(id:number, name:string, image:string, ingredient: String[], price:number)
     {
       this.id = id;
       this.name = name;
@@ -40,6 +41,7 @@ export class Sandwich
       this.image = image;
       this.supplements = new Array(0);
       this.ingredient = new Array(0);
+      this.price = price;
     }
 
     addIngredient(ingredient:IIngredient):void
@@ -72,7 +74,7 @@ export class Sandwich
 
 
     getPrice():number{
-      let price : number = 0;
+      let price : number = this.price;
       this.supplements!.forEach(element => {
         price += element.getPrice()
       });
@@ -81,7 +83,7 @@ export class Sandwich
 
     copy():Sandwich
     {
-      const sandwich = new Sandwich(this.id, this.name, this.image, this.ingredient);
+      const sandwich = new Sandwich(this.id, this.name, this.image, this.ingredient, this.price);
       this.supplements.forEach(ingredient => {
         sandwich.addIngredient(ingredient);
       });
