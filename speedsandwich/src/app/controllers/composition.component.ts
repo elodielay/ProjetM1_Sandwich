@@ -22,7 +22,7 @@ export class CompositionComponent
 {
 
   menu!:Menu;
-  clg_pains:Bread[];
+  clg_breads:Bread[];
   clg_meats:Meat[];
   clg_cheeses:Cheese[];
   clg_sauces:Sauce[];
@@ -31,7 +31,7 @@ export class CompositionComponent
 
   constructor(private comp_model:CompositionModel, private panier_model:PanierModel)
   {
-    this.clg_pains = this.comp_model.getClgBreads();
+    this.clg_breads = this.comp_model.getClgBreads();
     this.clg_meats = this.comp_model.getClgMeats();
     this.clg_cheeses = this.comp_model.getClgCheeses();
     this.clg_sauces = this.comp_model.getClgSauces();
@@ -47,6 +47,7 @@ export class CompositionComponent
 
   onQuitCompo():void
   {
+    this.comp_model.initCatalogs();
     this.comp_model.initDefault("");
   }
   onAddToPanier():void
@@ -55,8 +56,14 @@ export class CompositionComponent
     this.comp_model.setName(element);
     this.panier_model.addItem(this.menu.copy());
     this.comp_model.initDefault(element);
+    this.comp_model.initCatalogs();
+    console.log(this.panier_model.articles);
   }
 
+  onSelectBread(index:number):void
+  {
+    this.comp_model.setBread(index);
+  }
   onSelectSauce(index:number):void
   {
     this.comp_model.setSauce(index);
@@ -70,4 +77,13 @@ export class CompositionComponent
     this.comp_model.setDrink(index);
   }
 
+  onAddMeat(index:number):void
+  {
+    this.comp_model.addMeat(index);
+  }
+
+  onRemoveMeat(index:number):void
+  {
+    this.comp_model.removeMeat(index);
+  }
 }

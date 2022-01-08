@@ -47,6 +47,29 @@ export class Sandwich
       this.supplements.push(ingredient);
     }
 
+    addSupplement(supplement:IIngredient):void
+    {
+      this.supplements.push(supplement);
+    }
+
+    removeSupplement(supplement:IIngredient):void
+    {
+      let i:number = 0;
+      let found:boolean = false;
+      const n:number = this.supplements.length;
+      while (!found && i<n) {
+        if (this.supplements[i]==supplement) {
+          found = true;
+        }
+        if (!found) {
+          i++;
+        }
+      }
+      if (found) {
+        this.supplements.splice(i, 1);
+      }
+    }
+
 
     getPrice():number{
       let price : number = 0;

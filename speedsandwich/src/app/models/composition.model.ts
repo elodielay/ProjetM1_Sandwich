@@ -37,46 +37,24 @@ export class CompositionModel
 	private menu!:Menu;
 	private created:number;
 
-	private clg_pains:Bread[] = [
-		new PainBaguette(),
-		new PainPita()
-	];
-	private clg_Meats:Meat[] = [
-		new EscalopeDinde(),
-		new PouletFrit(),
-		new SteackHache()
-	];
-	private clg_fromages:Cheese[] = [
-		new Cheddar(),
-		new Chevre(),
-		new Emmental()
-	];
-	private clg_sauces:Sauce[] = [
-		new Ketchup(),
-		new Mayonnaise(),
-		new Moutarde()
-	];
-	private clg_accompaniments:Accompaniment[] = [
-		new Frite(),
-		new Potatoes()
-	];
-	private clg_drinks:Drink[] = [
-		new Cola(),
-		new Eau(),
-		new SodaOrange()
-	];
+	private clg_breads:Bread[] = [];
+	private clg_meats:Meat[] = [];
+	private clg_cheeses:Cheese[] = [];
+	private clg_sauces:Sauce[] = [];
+	private clg_accompaniments:Accompaniment[] = [];
+	private clg_drinks:Drink[] = [];
 
 	getClgBreads():Bread[]
 	{
-		return this.clg_pains;
+		return this.clg_breads;
 	}
 	getClgMeats():Meat[]
 	{
-		return this.clg_Meats;
+		return this.clg_meats;
 	}
 	getClgCheeses():Cheese[]
 	{
-		return this.clg_fromages;
+		return this.clg_cheeses;
 	}
 	getClgSauces():Sauce[]
 	{
@@ -109,8 +87,14 @@ export class CompositionModel
 			this.created++;
 			this.menu.setName("Menu n° "+this.created.toString());
 		}else{
-			this.menu.setName(name);
+			this.menu.setName("Menu "+name);
 		}
+		this.emitMenu();
+	}
+	setBread(index:number):void
+	{
+		const bread = this.clg_breads[index];
+		this.menu.getSandwich().setBread(bread);
 		this.emitMenu();
 	}
 	setAccompaniement(index:number):void
@@ -130,13 +114,84 @@ export class CompositionModel
 	{
 		this.created = 0;
 		this.initDefault("");
+		this.initCatalogs();
+	}
+
+	addMeat(index:number):void
+	{
+		const meat = this.clg_meats[index];
+		meat.incCount();
+		if (meat.getCount()==1) {
+			const sandwich = this.menu.getSandwich();
+			sandwich?.addSupplement(meat);
+		}
+		console.log(this.menu.getSandwich());
+		this.emitMenu();
+	}
+	addCheese(index:number):void
+	{
+		const cheese = this.clg_cheeses[index];
+		cheese.incCount();
+		if (cheese.getCount()==1) {
+			const sandwich = this.menu.getSandwich();
+			sandwich.addSupplement(cheese);
+		}
+		this.emitMenu();
+	}
+
+	removeMeat(index:number):void
+	{
+		const meat = this.clg_meats[index];
+		if (meat.getCount()>0) {
+			meat.decCount();
+			if (meat.getCount()==0) {
+				const sandwich = this.menu.getSandwich();
+				sandwich.removeSupplement(meat);
+			}
+			console.log(this.menu.getSandwich());
+			this.emitMenu();
+		}
+	}
+	removeCheese(index:number):void
+	{
+		//
 	}
 
 	initDefault(menu:string):void
 	{
-		const name = (menu);
+		const name = menu;
 		this.menu = new Menu(name);
 		this.emitMenu();
+	}
+	initCatalogs():void
+	{
+		this.clg_breads = [];
+		this.clg_breads.push(new PainPita());
+		this.clg_breads.push(new PainBaguette());
+
+		this.clg_meats = [];
+		this.clg_meats.push(new PouletFrit());
+		this.clg_meats.push(new SteackHache());
+		this.clg_meats.push(new EscalopeDinde());
+
+		this.clg_cheeses = [];
+		this.clg_cheeses.push(new Chevre());
+		this.clg_cheeses.push(new Cheddar());
+		this.clg_cheeses.push(new Emmental());
+
+		this.clg_sauces = [];
+		this.clg_sauces.push(new Ketchup());
+		this.clg_sauces.push(new Moutarde());
+		this.clg_sauces.push(new Mayonnaise());
+
+		this.clg_accompaniments = [];
+		this.clg_accompaniments.push(new Frite());
+		this.clg_accompaniments.push(new Potatoes());
+
+		this.clg_drinks = [];
+		this.clg_drinks.push(new Eau());
+		this.clg_drinks.push(new Cola());
+		this.clg_drinks.push(new SodaOrange());
 	}
 
 	emitMenu():void

@@ -22,6 +22,10 @@ export class Menu
 		price += this.drink!.price;
 		return price;
 	}
+	getSandwich():Sandwich
+	{
+		return this.sandwich;
+	}
 	getSauce():Sauce
 	{
 		return this.sauce;
