@@ -2,7 +2,7 @@
         "id": 1,
         "name": "Burger au steak haché",
         "image": "../../assets/burger_boeuf.jpg", 
-        "baseIng": [
+        "ingredient": [
             "Steak haché",
             "Cheddar"
         ]
@@ -12,7 +12,7 @@
         "id": 2,
         "name": "Burger au poulet frit",
         "image": "../../assets/burger_poulet.jpg",
-        "baseIng": [
+        "ingredient": [
             "Poulet frit",
             "Cheddar"
         ]
@@ -22,7 +22,7 @@
         "id": 3,
         "name": "Club sandwich poulet",
         "image": "../../assets/club_sandwich.jpg",
-        "baseIng": [
+        "ingredient": [
             "Poulet frit",
             "Emmental"
         ]
@@ -32,7 +32,7 @@
         "id": 4,
         "name": "Sandwich dinde",
         "image": "../../assets/sandwich_dinde.jpg",
-        "baseIng": [
+        "ingredient": [
             "Dinde",
             "Chevre"
         ]
@@ -42,7 +42,7 @@
         "id": 5,
         "name": "Sandwich poulet",
         "image": ".../../assets/sandwich.jpg",
-        "baseIng": [
+        "ingredient": [
             "Dinde",
             "Cheddar"
         ]
