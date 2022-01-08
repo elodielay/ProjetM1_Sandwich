@@ -80,13 +80,14 @@ export class PanierComponent implements OnInit
     } 
     if(this.validation==true){
       this.clearPanier();
-
+      
     }
     
   }
   clearPanier():void
   {
     this.panier_model.articles=[];
+    this.sandwichs = [];
   }
   isNum(val:string):boolean
   {
