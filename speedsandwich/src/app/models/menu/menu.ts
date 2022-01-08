@@ -1,7 +1,7 @@
 import { Sandwich } from '../sandwich/sandwich';
 import { Drink } from '../ingredients/drinks/drink';
 import { Sauce } from '../ingredients/sauces/sauce';
-import { Supplements } from '../ingredients/supplements/supplements';
+import { Accompaniment } from '../ingredients/accompaniments/accompaniment';
 import { IIngredient } from '../ingredients/i-ingredient';
 
 export class Menu
@@ -11,14 +11,14 @@ export class Menu
 	private name:string;
 	private sandwich!:Sandwich;
 	private sauce!:Sauce;
-	private accompaniement!:Supplements;
+	private accompaniment!:Accompaniment;
 	private drink!:Drink;
 	image!:string;
 
 	getPrice():number
 	{
 		let price = this.sandwich.getPrice();
-		price += this.accompaniement!.price;
+		price += this.accompaniment!.price;
 		price += this.drink!.price;
 		return price;
 	}
@@ -30,9 +30,9 @@ export class Menu
 	{
 		return this.drink;
 	}
-	getAccompaniement():Supplements
+	getAccompaniement():Accompaniment
 	{
-		return this.accompaniement;
+		return this.accompaniment;
 	}
 	getSupplements():IIngredient[]
 	{
@@ -54,9 +54,9 @@ export class Menu
 	{
 		this.sauce = sauce;
 	}
-	setAccompaniement(accompaniement:Supplements):void
+	setAccompaniement(accompaniment:Accompaniment):void
 	{
-		this.accompaniement = accompaniement;
+		this.accompaniment = accompaniment;
 	}
 	setDrink(drink:Drink):void
 	{
@@ -70,7 +70,7 @@ export class Menu
 
 	complete():boolean
 	{
-		if (this.sauce && this.accompaniement && this.drink) {
+		if (this.sauce && this.accompaniment && this.drink) {
 			return true;
 		}
 		return false;
@@ -81,7 +81,7 @@ export class Menu
 		const copy = new Menu(this.name);
 		copy.setSandwich(this.sandwich);
 		copy.setSauce(this.sauce);
-		copy.setAccompaniement(this.accompaniement);
+		copy.setAccompaniement(this.accompaniment);
 		copy.setDrink(this.drink);
 		return copy;
 	}

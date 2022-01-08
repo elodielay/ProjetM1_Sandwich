@@ -1,6 +1,6 @@
-import { Supplements } from "./supplements";
+import { Accompaniment } from "./accompaniment";
 
-export class Frite extends Supplements
+export class Frite extends Accompaniment
 {
     constructor()
     {

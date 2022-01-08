@@ -21,9 +21,9 @@ import { Ketchup } from './ingredients/sauces/ketchup';
 import { Mayonnaise } from './ingredients/sauces/mayonnaise';
 import { Moutarde } from './ingredients/sauces/moutarde';
 
-import { Supplements } from './ingredients/supplements/supplements';
-import { Frite } from './ingredients/supplements/frite';
-import { Potatoes } from './ingredients/supplements/potatoes';
+import { Accompaniment } from './ingredients/accompaniments/accompaniment';
+import { Frite } from './ingredients/accompaniments/frite';
+import { Potatoes } from './ingredients/accompaniments/potatoes';
 
 import { Drink } from './ingredients/drinks/drink';
 import { Cola } from './ingredients/drinks/cola';
@@ -56,7 +56,7 @@ export class CompositionModel
 		new Mayonnaise(),
 		new Moutarde()
 	];
-	private clg_supplements:Supplements[] = [
+	private clg_accompaniments:Accompaniment[] = [
 		new Frite(),
 		new Potatoes()
 	];
@@ -82,9 +82,9 @@ export class CompositionModel
 	{
 		return this.clg_sauces;
 	}
-	getClgSupplements():Supplements[]
+	getClgAccompaniments():Accompaniment[]
 	{
-		return this.clg_supplements;
+		return this.clg_accompaniments;
 	}
 	getClgDrinks():Drink[]
 	{
@@ -115,7 +115,7 @@ export class CompositionModel
 	}
 	setAccompaniement(index:number):void
 	{
-		const accompaniement = this.clg_supplements[index];
+		const accompaniement = this.clg_accompaniments[index];
 		this.menu.setAccompaniement(accompaniement);
 		this.emitMenu();
 	}
