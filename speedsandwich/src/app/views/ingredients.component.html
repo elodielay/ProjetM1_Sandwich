@@ -3,10 +3,9 @@
     <div *ngIf="sandwich" class="sandwich">
         <img class="img-fluid" style="max-height: 150px;" [src]="sandwich.image" alt="#" />
         <ul>
-            <li *ngFor="let supplement of sandwich.getSupplements();">
-                {{ supplement.getWording() }}
+            <li>
+                {{ sandwich.getBread().getWording() }}
             </li>
-
             <li *ngFor="let ingredient of sandwich.getIngredients();">
                 {{ ingredient }}
             </li>

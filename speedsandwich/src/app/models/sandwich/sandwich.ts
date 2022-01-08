@@ -1,16 +1,23 @@
-import { IIngredient } from "../ingredients/i-ingredient";
 import { Type } from 'class-transformer';
+
+import { IIngredient } from "../ingredients/i-ingredient";
+import { Bread } from "../ingredients/breads/bread";
 
 export class Sandwich
 {
     id:number;
     name:string;
+    bread?:Bread;
     image:string;
     supplements:IIngredient[];
 
     @Type(() => String)
     baseIng: String[];
 
+    getBread():Bread
+    {
+      return this.bread!;
+    }
     getIngredients():String[]
     {
       return this.baseIng;
@@ -20,10 +27,16 @@ export class Sandwich
       return this.supplements.slice();
     }
 
+    setBread(bread:Bread):void
+    {
+      this.bread = bread;
+    }
+
     constructor(id:number, name:string, image:string, baseIng: String[])
     {
       this.id = id;
       this.name = name;
+      this.bread = undefined;
       this.image = image;
       this.supplements = new Array(0);
       this.baseIng = new Array(0);

@@ -31,6 +31,12 @@ export class AccueilModel
 
 	public getSandwiches():Sandwich[]
 	{
+		this.sandwiches[0].setBread(new PainBaguette());
+		this.sandwiches[1].setBread(new PainBaguette());
+		this.sandwiches[2].setBread(new PainPita());
+		this.sandwiches[3].setBread(new PainPita());
+		this.sandwiches[4].setBread(new PainPita());
+
 		console.log(this.sandwiches);
 
 		return this.sandwiches;
