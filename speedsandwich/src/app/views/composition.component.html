@@ -8,9 +8,9 @@
         </div>
         <div class="box-content">
           <div class="box-loop" *ngFor="let bread of clg_breads; let i=index">
-            <div class="box-content-ele" (click)="onSelectBread(i)">
-              <div class="box-content-img-label">{{ bread.getWording() }}</div>
-              <div class="box-content-img">
+            <div class="box-content-ele">
+              <div class="box-content-img-label" (click)="onSelectBread(i)">{{ bread.getWording() }}</div>
+              <div class="box-content-img" (click)="onSelectBread(i)">
                 <img [src]="bread.getImage()" width="200" height="200" class="image">
               </div>
             </div>
@@ -133,6 +133,7 @@
       <h3>Voici les ingrédients sélectionnés</h3>
     </div>
     <div>
+      {{this.menu!.getSandwich().getBread()?.getWording()}}
       {{this.menu!.getSauce()?.getWording()}}
       {{this.menu!.getDrink()?.getWording()}}
       {{this.menu!.getAccompaniement()?.getWording()}}
