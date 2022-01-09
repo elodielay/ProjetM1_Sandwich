@@ -25,7 +25,7 @@
         "name": "Club sandwich poulet",
         "image": "../../assets/club_sandwich.jpg",
         "ingredient": [
-            "Poulet frit",
+            "Poulet",
             "Emmental"
         ],
         "price": 1.9
@@ -47,7 +47,7 @@
         "name": "Sandwich poulet",
         "image": ".../../assets/sandwich.jpg",
         "ingredient": [
-            "Dinde",
+            "Poulet",
             "Cheddar"
         ],
         "price": 2.3
